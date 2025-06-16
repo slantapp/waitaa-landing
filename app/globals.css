@@ -73,3 +73,24 @@ body {
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
 }
 
+/* GSAP Utility Classes */
+.gsap-hidden {
+  visibility: hidden;
+}
+
+/* Prevent FOUC (Flash of Unstyled Content) */
+.gsap-init {
+  opacity: 0;
+}
+
+/* Smooth scroll behavior */
+.smooth-scroll {
+  scroll-behavior: auto !important; /* GSAP handles smoothing */
+}
+
+/* ScrollTrigger markers styling (development only) */
+.gsap-marker-start,
+.gsap-marker-end {
+  font-size: 10px !important;
+  font-weight: normal !important;
+}
