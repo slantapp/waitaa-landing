@@ -1,28 +1,29 @@
 @import "tailwindcss";
-@import 'aos/dist/aos.css';
+@import "aos/dist/aos.css";
 
-@theme{
-  --color-secondary: #667185;
+@theme {
+  --color-primary: #adf802;
+  --color-secondary: #233200;
 }
 
 @layer base {
-    *,
-    *::before,
-    *::after {
-        padding: 0;
-        margin: 0;
-        box-sizing: border-box;
-    }
+  *,
+  *::before,
+  *::after {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+  }
 
-    /* For Firefox. */
-    * {
-        scrollbar-width: none;
-    }
+  /* For Firefox. */
+  * {
+    scrollbar-width: none;
+  }
 
-    /* For WebKit (Chrome & Safari). */
-    ::-webkit-scrollbar {
-        display: none;
-    }
+  /* For WebKit (Chrome & Safari). */
+  ::-webkit-scrollbar {
+    display: none;
+  }
 }
 
 body {
@@ -30,14 +31,13 @@ body {
 }
 
 .scrollbar-hide {
-  -ms-overflow-style: none;  /* IE and Edge */
-  scrollbar-width: none;  /* Firefox */
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
 }
 
 .scrollbar-hide::-webkit-scrollbar {
-  display: none;  /* Chrome, Safari and Opera */
+  display: none; /* Chrome, Safari and Opera */
 }
-
 
 /* Custom pagination bullets */
 .swiper-custom-bullet {
