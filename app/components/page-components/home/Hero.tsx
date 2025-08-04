@@ -102,7 +102,7 @@ const Hero = () => {
 
       {/* Content */}
       <div className="relative z-10 mt-20 container mx-auto px-4 sm:px-6 lg:px-8 h-screen flex items-center">
-        <div className="w-full md:w-[70%]">
+        <div className="w-full md:w-[65%]">
           {/* Welcome Text */}
           <div ref={welcomeRef} className="mb-6 sm:mb-8">
             <p className="text-primary text-sm sm:text-base font-medium tracking-wider uppercase">
@@ -130,11 +130,11 @@ const Hero = () => {
             ref={buttonsRef}
             className="flex flex-col sm:flex-row gap-4 sm:gap-6"
           >
-            <button className="bg-primary text-[#012353] px-8 py-2 rounded-full hover:shadow-lg transition-all duration-300 order-1 sm:order-none hover:scale-105">
+            <button className="bg-primary text-[#012353] px-8 py-4 rounded-full hover:shadow-lg transition-all duration-300 order-1 sm:order-none hover:scale-105">
               Get Started
             </button>
 
-            <button className="hover:scale-105 transition-all duration-300 bg-opacity-5 bg-white border border-white border-opacity-20 text-secondary px-8 py-2 rounded-full flex items-center justify-center gap-3 ">
+            <button className="hover:scale-105 transition-all duration-300 bg-opacity-5 bg-white border border-white border-opacity-20 text-secondary px-8 py-4 rounded-full flex items-center justify-center gap-3">
               <div className="w-6 h-6 bg-[#689501] rounded-full flex items-center justify-center">
                 <Play
                   className="w-3 h-3 ml-0.5 text-white"
