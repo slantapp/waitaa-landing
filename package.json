@@ -9,9 +9,8 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "aos": "^2.3.4",
+    "@formkit/auto-animate": "^0.9.0",
     "formik": "^2.4.6",
-    "gsap": "^3.13.0",
     "lucide-react": "^0.515.0",
     "next": "15.3.0",
     "react": "^19.0.0",
@@ -23,7 +22,6 @@
   "devDependencies": {
     "@eslint/eslintrc": "^3",
     "@tailwindcss/postcss": "^4",
-    "@types/aos": "^3.0.7",
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",

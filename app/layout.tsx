@@ -2,8 +2,6 @@ import type { Metadata } from "next";
 import "./globals.css";
 import { Urbanist } from "next/font/google";
 import { ToastContainer } from "react-toastify";
-import AOSInit from "@/lib/AOSInit";
-import GSAPProvider from "@/lib/GSAPProvider";
 
 export const metadata: Metadata = {
   title: "Waitaa",
@@ -27,11 +25,8 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${urbanist.variable} antialiased`}>
-        <GSAPProvider>
-          <AOSInit />
-          <main>{children}</main>
-          <ToastContainer />
-        </GSAPProvider>
+        <main>{children}</main>
+        <ToastContainer />
       </body>
     </html>
   );
