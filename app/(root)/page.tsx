@@ -9,7 +9,7 @@ import Testimonials from "../components/page-components/home/Testimonials";
 
 const Home = () => {
   return (
-    <div className="">
+    <div>
       <Hero />
       <Partners />
       <SocialProof />
