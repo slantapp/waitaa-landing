@@ -30,6 +30,7 @@
 body {
   font-family: urbanist, sans-serif;
   background-color: #f8fbef;
+  scroll-behavior: smooth;
 }
 
 .scrollbar-hide {

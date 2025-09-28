@@ -63,7 +63,7 @@ const Faq = () => {
             {faqs.map((faq, index) => (
               <div
                 key={index}
-                className="bg-[#F4F2EA] hover:bg-[#edece4] rounded-lg overflow-hidden"
+                className="bg-[#FFFFFF] hover:bg-[#f4f4ee] rounded-lg overflow-hidden"
               >
                 <button
                   onClick={() => toggleAccordion(index)}
