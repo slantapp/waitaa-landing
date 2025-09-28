@@ -13,9 +13,8 @@ const Newsletter = () => {
   };
 
   return (
-    <div className="relative w-full py-16 ">
-      <div className="relative overflow-hidden max-w-7xl mx-auto px-4">
-        <div className="bg-[#233200]/90 rounded-3xl lg:rounded-[3rem] p-8 md:p-12 lg:p-16 relative overflow-hidden">
+      <div className="max-w-7xl mx-auto py-16 px-4">
+        <div className="rounded-3xl lg:rounded-[3rem] px-2 py-8 md:p-12 lg:p-16 relative overflow-hidden">
           <Image
             src="/images/peopleEating.png"
             alt="Restaurant dining scene"
@@ -28,7 +27,7 @@ const Newsletter = () => {
           <div className="relative z-10">
             {/* Header */}
             <div className="text-center lg:text-left">
-              <h2 className="text-white text-3xl md:text-4xl lg:text-5xl w-1/2 font-normal mb-6 leading-tight max-w-4xl lg:mx-0 mx-auto">
+              <h2 className="text-white text-3xl md:text-4xl lg:text-5xl lg:w-1/2 font-normal mb-6 leading-tight max-w-4xl lg:mx-0 mx-auto">
                 Download the Waitaa App & Get Free Ads
               </h2>
               <p className="text-white/80 text-lg md:text-xl mb-8 max-w-2xl lg:mx-0 mx-auto">
@@ -42,7 +41,7 @@ const Newsletter = () => {
                   placeholder="Enter your email"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
-                  className="w-full px-6 py-6 rounded-full bg-white/10  text-white placeholder-white focus:outline-none focus:border-white/40 focus:bg-white/20 transition-all"
+                  className="w-full px-6 py-6 rounded-full bg-white/10  text-white placeholder-white focus:outline-none  focus:bg-white/20 transition-all"
                 />
                 <button
                   onClick={handleSubmit}
@@ -83,7 +82,6 @@ const Newsletter = () => {
           </div>
         </div>
       </div>
-    </div>
   );
 };
 

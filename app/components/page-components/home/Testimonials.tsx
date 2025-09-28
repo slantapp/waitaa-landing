@@ -90,7 +90,7 @@ const Testimonials = () => {
         {/* Header */}
         <div className="flex justify-between items-center mb-16">
           <h2 className="text-[#233200] text-4xl md:text-5xl lg:text-6xl font-normal">
-            What Our Client Said About Us
+            What Our Clients Say About Us
           </h2>
 
           {/* Navigation Arrows */}

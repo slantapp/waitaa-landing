@@ -4,7 +4,6 @@ import Image from "next/image";
 import { useState } from "react";
 
 const NeedToKnow = () => {
-
   const [email, setEmail] = useState("");
 
   const handleSubmit = () => {
@@ -35,8 +34,8 @@ const NeedToKnow = () => {
         {/* Service Cards Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
           {/* QR Code Card */}
-          <div className="bg-[#F1F5F933] backdrop-blur-sm rounded-3xl p-6 pb-8 transition-transform duration-300 hover:scale-105">
-            <div className="mx-auto w-fit">
+          <div className="bg-[#F1F5F933] backdrop-blur-sm  rounded-3xl p-6 pb-8 transition-transform duration-300 hover:scale-105">
+            <div className="mx-auto w-fit h-full flex flex-col justify-between">
               <Image
                 src="/images/qrCodeScanningGray.png"
                 alt="scanning qr code"
@@ -44,10 +43,12 @@ const NeedToKnow = () => {
                 width={245}
                 className="relative z-0"
               />
-              <h3 className="text-2xl font-semibold mt-4">QR Code</h3>
-              <p className="text-lg text-white/80 font-light">
-                Subscription Services
-              </p>
+              <div className="space-y-4">
+                <h3 className="text-2xl font-semibold mt-4">QR Code</h3>
+                <p className="text-lg text-white/80 font-light">
+                  Subscription Services
+                </p>
+              </div>
             </div>
           </div>
 
