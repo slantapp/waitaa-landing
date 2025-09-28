@@ -102,7 +102,7 @@ const Navbar = () => {
               {/* Mobile Menu Button */}
               <div className="md:hidden">
                 <button
-                  className="p-2 text-white/90 hover:text-white"
+                  className="p-2 text-gray-300"
                   onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
                 >
                   <svg
