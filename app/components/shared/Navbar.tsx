@@ -4,11 +4,16 @@ import React, { useState, useEffect } from "react";
 import { ChevronDown, X } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
+import { usePathname } from "next/navigation";
 
 const Navbar = () => {
   const [isVisible, setIsVisible] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const pathname = usePathname();
+
+  // Check if we're on the landing page
+  const isLandingPage = pathname === "/";
 
   useEffect(() => {
     const controlNavbar = () => {
@@ -52,7 +57,11 @@ const Navbar = () => {
           isVisible ? "translate-y-0" : "-translate-y-[150%]"
         } z-50`}
       >
-        <div className="bg-[#F4F2EA33] backdrop-blur-[2px] shadow-sm shadow-[#4C55FF0F]/6 rounded-3xl">
+        <div
+          className={`${
+            isLandingPage ? "bg-[#F4F2EA33] backdrop-blur-[2px]" : "bg-black"
+          } shadow-sm shadow-[#4C55FF0F]/6 rounded-3xl`}
+        >
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="flex items-center justify-between h-16 lg:h-20">
               {/* Logo */}
