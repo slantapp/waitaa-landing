@@ -10,7 +10,10 @@ const Hero = () => {
   });
 
   return (
-    <section className="relative min-h-screen w-full overflow-hidden rounded-b-3xl">
+    <section
+      id="home"
+      className="relative min-h-screen w-full overflow-hidden rounded-b-3xl scroll-mt-28"
+    >
       <div className="absolute inset-0 z-0">
         <div
           className="hero-bg w-full h-full bg-cover bg-center bg-no-repeat"

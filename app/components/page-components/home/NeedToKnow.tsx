@@ -11,7 +11,7 @@ const NeedToKnow = () => {
   };
 
   return (
-    <section>
+    <section id="features" className="scroll-mt-28">
       <div className="min-h-screen bg-[#233200] text-white px-4 sm:px-8 lg:px-16 py-12 sm:py-16 lg:py-20 rounded-4xl">
         {/* Everything You Need to Know Badge */}
         <div className="inline-block mb-8 sm:mb-12">

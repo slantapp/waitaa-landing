@@ -15,7 +15,7 @@ const Partners = () => {
   const duplicatedLogos = [...logos, ...logos, ...logos];
 
   return (
-    <section className="overflow-hidden">
+    <section className="overflow-hidden ">
       <p className="uppercase text-center mt-20 font-medium text-sm sm:text-base">
         Featured and seen in
       </p>

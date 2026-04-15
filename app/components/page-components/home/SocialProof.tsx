@@ -15,9 +15,13 @@ const SocialProof = () => {
   const [containerParent] = useAutoAnimate();
 
   return (
-    <div className="min-h-screen bg-[#FFFFFF] w-[95%] rounded-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16 lg:py-20 mt-14">
+    <section
+      id="products"
+      className="min-h-screen bg-[#FFFFFF] w-[95%] rounded-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16 lg:py-20 mt-14 scroll-mt-28"
+    >
       {/* Header Section */}
       <div className="max-w-7xl mx-auto" ref={containerParent}>
+        <div id="ringa" className="h-0 w-0 overflow-hidden scroll-mt-28" />
         <div className="text-center mb-8 sm:mb-12 lg:mb-16">
           <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-[var(--color-secondary)] leading-tight max-w-5xl mx-auto px-4">
             From Buzzer Devices to daily QR essentials, dine Smartly!
@@ -36,6 +40,7 @@ const SocialProof = () => {
 
         {/* Image Section with Overlays */}
         <div className="relative max-w-6xl mx-auto">
+          <div id="menu" className="h-0 w-0 overflow-hidden scroll-mt-28" />
           <div className="relative rounded-3xl overflow-hidden shadow-2xl">
             <div className="w-full h-[400px] sm:h-[500px] lg:h-[600px]">
               <Image
@@ -116,7 +121,7 @@ const SocialProof = () => {
           </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 

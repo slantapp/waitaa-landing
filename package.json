@@ -10,6 +10,8 @@
   },
   "dependencies": {
     "@formkit/auto-animate": "^0.9.0",
+    "@radix-ui/react-select": "^2.2.6",
+    "clsx": "^2.1.1",
     "formik": "^2.4.6",
     "lucide-react": "^0.515.0",
     "next": "15.3.0",
@@ -19,6 +21,7 @@
     "react-slick": "^0.31.0",
     "react-toastify": "^11.0.5",
     "slick-carousel": "^1.8.1",
+    "tailwind-merge": "^3.5.0",
     "yup": "^1.6.1"
   },
   "devDependencies": {
