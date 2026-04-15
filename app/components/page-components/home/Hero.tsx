@@ -2,6 +2,7 @@
 
 import { Play } from "lucide-react";
 import { useAutoAnimate } from "@formkit/auto-animate/react";
+import Link from "next/link";
 
 const Hero = () => {
   const [heroContent] = useAutoAnimate({
@@ -52,9 +53,12 @@ const Hero = () => {
 
             {/* Buttons */}
             <div className="flex flex-col sm:flex-row gap-4 sm:gap-6">
-              <button className="bg-[var(--color-primary)] text-[var(--color-secondary)] px-6 sm:px-8 py-3 sm:py-4 rounded-full font-medium hover:shadow-lg hover:scale-105 transition-all duration-300 order-1 sm:order-none">
+              <Link
+                href="/get-started"
+                className="bg-[var(--color-primary)] text-[var(--color-secondary)] px-6 sm:px-8 py-3 sm:py-4 rounded-full font-medium hover:shadow-lg hover:scale-105 transition-all duration-300 order-1 sm:order-none inline-flex items-center justify-center"
+              >
                 Get Started
-              </button>
+              </Link>
 
               <button className="transition-all duration-300 bg-white/10 backdrop-blur-sm border border-white/20 text-white px-6 sm:px-8 py-3 sm:py-4 rounded-full flex items-center justify-center gap-3 hover:bg-white/20 hover:scale-105">
                 <div className="w-6 h-6 bg-[#689501] rounded-full flex items-center justify-center">
