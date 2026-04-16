@@ -10,7 +10,7 @@ const Faq = () => {
     {
       question: "What is Waitaa, and who is it for?",
       answer:
-        "Waitaa is a smart customer interaction ecosystem for restaurants, hotels, lounges, cafes, and other service environments. We help you connect with customers via QR-based calling, ordering, and engagement—without adding friction to the dining experience.",
+        "Waitaa is a smart customer interaction ecosystem for restaurants, hotels, lounges, cafes, and other service environments. We help you connect with customers via QR-based calling, ordering, and engagement—without adding friction to the experience.",
     },
     {
       question: "What products do you offer (Ringa vs Menu)?",
@@ -18,19 +18,14 @@ const Faq = () => {
         "Waitaa powers two core products: Ringa (smart customer calling & communication) and Menu (QR-based digital menu + ordering). You can use either product independently, or combine both for a full service and ordering flow.",
     },
     {
-      question: "Do I need any hardware to use Waitaa?",
+      question: "Do I need any additional hardware to use Waitaa?",
       answer:
-        "No. Waitaa is designed to work with QR codes and the devices you already have. Customers use their phones, and your team receives requests/orders on supported devices via the dashboard.",
+        "No. Waitaa is designed to work with QR codes and the devices you already have. Customers use their phones, and your team receives requests or orders on supported devices via the dashboard.",
     },
     {
       question: "How long does setup take?",
       answer:
-        "Most businesses can get started quickly. Once your QR codes are placed and your team is onboarded, you can begin receiving requests (Ringa) and/or orders (Menu) immediately.",
-    },
-    {
-      question: "Can I customize the experience with my brand?",
-      answer:
-        "Yes. You can customize the customer interface and tailor the experience to match your brand. This helps keep the interaction consistent with your restaurant or venue identity.",
+        "Most businesses can get started quickly. Once your QR codes are placed, your menu or services are configured, and your team is onboarded, you can begin receiving requests (Ringa) and/or orders (Menu) immediately.",
     },
     {
       question: "Can Waitaa help me earn additional revenue?",
@@ -38,24 +33,9 @@ const Faq = () => {
         "Yes. Ringa includes an ads monetization system that can display campaigns after customers scan a QR code, with analytics like impressions and engagement. You can also run ads on an optional Ads Screen (TV/Android display).",
     },
     {
-      question: "Who owns my data and customer relationships?",
-      answer:
-        "You do. You retain ownership of your business data and customer relationships. Waitaa provides the tools and infrastructure to deliver the experience and insights—without taking ownership of your customers.",
-    },
-    {
-      question: "Is Waitaa available on mobile and web?",
-      answer:
-        "Yes. The customer experience works on mobile, and your team can manage activity through supported interfaces and dashboards. Waitaa is built to work smoothly across modern devices.",
-    },
-    {
-      question: "Do you support multiple locations or multiple devices?",
-      answer:
-        "Yes. You can run Waitaa across multiple staff devices, screens, and locations—designed to scale as your business grows.",
-    },
-    {
       question: "How do I talk to your team before signing up?",
       answer:
-        "You can reach us via the Contact us page. We’ll help you decide between Ringa, Menu, or a combined setup and guide you through next steps.",
+        "You can reach us via the Contact us page. We’ll help you decide between Ringa, Menu, or a combined setup and guide you through next steps for your business.",
     },
   ];
 

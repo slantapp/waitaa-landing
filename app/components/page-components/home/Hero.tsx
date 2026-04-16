@@ -13,7 +13,7 @@ const Hero = () => {
   return (
     <section
       id="home"
-      className="relative min-h-screen w-full overflow-hidden rounded-b-3xl scroll-mt-28"
+      className="relative lg:min-h-screen w-full overflow-hidden rounded-b-3xl scroll-mt-28"
     >
       <div className="absolute inset-0 z-0">
         <div
@@ -26,7 +26,7 @@ const Hero = () => {
       </div>
 
       {/* Content */}
-      <div className="relative z-10 mt-20 container mx-auto px-4 sm:px-6 lg:px-8 h-screen flex items-center">
+      <div className="relative z-10 mt-40 mb-24 lg:mt-20 container mx-auto px-4 sm:px-6 lg:px-8 lg:h-screen flex items-center">
         <div className="w-full md:w-[65%]">
           <div ref={heroContent}>
             {/* Welcome Text */}

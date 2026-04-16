@@ -15,7 +15,7 @@ export default function PatternHero({
 }: PatternHeroProps) {
   return (
     <section className={className}>
-      <div className="relative w-full h-64 sm:h-80 lg:h-[390px] overflow-hidden bg-[#0B0B0B]">
+      <div className="relative w-full h-80 lg:h-[420px] overflow-hidden bg-[#0B0B0B]">
         {/* Decorative patterns and icons */}
         <div className="pointer-events-none absolute inset-0">
           {/* Outer rings */}
@@ -55,7 +55,7 @@ export default function PatternHero({
         </div>
 
         {/* Centered hero text */}
-        <div className="relative z-10 flex h-full items-center justify-center px-4 pt-10 text-center">
+        <div className="relative z-10 flex h-full items-center justify-center px-4 pt-30 pb-16 lg:pt-10 text-center">
           <div>
             {badge && (
               <p className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-1.5 text-xs font-medium uppercase tracking-[0.16em] text-white/70">
