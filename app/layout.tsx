@@ -1,15 +1,80 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import "./globals.css";
 import { Urbanist } from "next/font/google";
 import { ToastContainer } from "react-toastify";
 
+const siteUrl =
+  process.env.NEXT_PUBLIC_SITE_URL?.replace(/\/$/, "") ?? "https://waitaa.com";
+
+const title = "Waitaa";
+const description =
+  "Turn every table into a smart experience. Waitaa helps restaurants, hotels, lounges, and public spaces connect with customers through QR-based calling, ordering, and ads monetization.";
+
 export const metadata: Metadata = {
-  title: "Waitaa",
-  description: "Africa's Leading QR Restaurant Service Solution",
+  metadataBase: new URL(siteUrl),
+  title: {
+    default: title,
+    template: `%s | ${title}`,
+  },
+  description,
+  applicationName: title,
+  keywords: [
+    "Waitaa",
+    "QR code restaurant ordering system in Africa",
+    "digital waiter calling system without hardware",
+    "smart table service technology",
+    "contactless ordering",
+    "customer-to-staff communication platform",
+    "restaurant QR menu",
+    "restaurant ads monetization",
+    "hospitality technology",
+  ],
+  alternates: {
+    canonical: "/",
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+      "max-video-preview": -1,
+    },
+  },
+  openGraph: {
+    type: "website",
+    siteName: title,
+    url: siteUrl,
+    title,
+    description,
+    locale: "en_US",
+    images: [
+      {
+        url: "/images/landingPageHero1.webp",
+        width: 1200,
+        height: 630,
+        alt: "Waitaa — Smart Customer Interaction for Modern Businesses",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title,
+    description,
+    images: ["/images/landingPageHero1.webp"],
+  },
   icons: {
     icon: "/favicon.png",
     apple: [{ url: "/favicon.png", sizes: "180x180", type: "image/png" }],
   },
+};
+
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  themeColor: "#0A0A0A",
 };
 
 const urbanist = Urbanist({

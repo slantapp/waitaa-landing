@@ -3,6 +3,7 @@
 // import { DollarSign } from "lucide-react";
 import Image from "next/image";
 import { useAutoAnimate } from "@formkit/auto-animate/react";
+import Link from "next/link";
 
 const avatars = [
   "/images/avatars/avatar1.png",
@@ -21,7 +22,6 @@ const SocialProof = () => {
     >
       {/* Header Section */}
       <div className="max-w-7xl mx-auto" ref={containerParent}>
-        <div id="ringa" className="h-0 w-0 overflow-hidden scroll-mt-28" />
         <div className="text-center mb-8 sm:mb-12 lg:mb-16">
           <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-[var(--color-secondary)] leading-tight max-w-5xl mx-auto px-4">
             From Buzzer Devices to daily QR essentials, dine Smartly!
@@ -29,9 +29,12 @@ const SocialProof = () => {
 
           {/* CTA Buttons */}
           <div className="flex flex-col sm:flex-row gap-4 justify-center mt-8 sm:mt-10 lg:mt-12">
-            <button className="bg-[var(--color-primary)] text-[var(--color-secondary)] px-6 sm:px-7 lg:px-8 py-3 sm:py-3.5 lg:py-4 rounded-full font-medium text-sm sm:text-base hover:opacity-90 transition-all duration-200 hover:shadow-xl transform hover:scale-105 cursor-pointer">
+            <Link
+              href="/get-started"
+              className="bg-[var(--color-primary)] text-[var(--color-secondary)] px-6 sm:px-7 lg:px-8 py-3 sm:py-3.5 lg:py-4 rounded-full font-medium text-sm sm:text-base hover:opacity-90 transition-all duration-200 hover:shadow-xl transform hover:scale-105 cursor-pointer inline-flex items-center justify-center"
+            >
               Get Started with Waitaa
-            </button>
+            </Link>
             <button className="bg-gray-300 text-[var(--color-secondary)] px-6 sm:px-7 lg:px-8 py-3 sm:py-3.5 lg:py-4 rounded-full font-medium text-sm sm:text-base hover:bg-gray-400 transition-all duration-200 hover:shadow-xl transform hover:scale-105 cursor-pointer">
               Discover Waitaa
             </button>
@@ -40,7 +43,6 @@ const SocialProof = () => {
 
         {/* Image Section with Overlays */}
         <div className="relative max-w-6xl mx-auto">
-          <div id="menu" className="h-0 w-0 overflow-hidden scroll-mt-28" />
           <div className="relative rounded-3xl overflow-hidden shadow-2xl">
             <div className="w-full h-[400px] sm:h-[500px] lg:h-[600px]">
               <Image

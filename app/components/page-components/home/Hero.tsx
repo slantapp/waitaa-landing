@@ -19,7 +19,7 @@ const Hero = () => {
         <div
           className="hero-bg w-full h-full bg-cover bg-center bg-no-repeat"
           style={{
-            backgroundImage: "url('/images/landingPageHero.png')",
+            backgroundImage: "url('/images/landingPageHero.webp')",
           }}
         />
         <div className="absolute inset-0 bg-[#1A1A1A]/50 transition-opacity duration-800" />

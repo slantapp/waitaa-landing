@@ -9,7 +9,7 @@ const Footer = () => {
         <div className="flex flex-col md:flex-row justify-between items-center gap-6">
           {/* Copyright */}
           <div className="text-white/80 text-sm md:text-base">
-            © 2025 Waitaa. All Right Reserved
+            © 2026 Waitaa. All Right Reserved
           </div>
 
           {/* Navigation Links */}

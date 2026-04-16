@@ -1,0 +1,32 @@
+{
+  "plans": [
+    {
+      "key": "smallBusiness",
+      "name": "Small Business",
+      "features": [
+        "up to 10 tables/spots",
+        "English + 1 local language",
+        "Full revenue Allowance"
+      ],
+      "price": {
+        "monthly": 10000,
+        "yearly": 100000
+      }
+    },
+    {
+      "key": "standardRestaurant",
+      "name": "Standard Restaurant",
+      "features": [
+        "Up to 30 tables",
+        "All 4 Nigerian Languages",
+        "Priority support",
+        "Custom restaurant branding",
+        "Peak hours analytics"
+      ],
+      "price": {
+        "monthly": 30000,
+        "yearly": 300000
+      }
+    }
+  ]
+}

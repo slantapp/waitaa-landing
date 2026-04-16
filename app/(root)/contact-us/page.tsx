@@ -6,15 +6,22 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/app/components/ui/select";
+import PatternHero from "@/app/components/shared/PatternHero";
 
 export default function ContactUsPage() {
   return (
-    <div className="pt-34 pb-20">
+    <div className="pt-0 pb-20">
       <div className="pointer-events-none fixed inset-0 -z-10 bg-[#0A0A0A]">
         <div className="absolute -top-40 left-1/2 h-[520px] w-[520px] -translate-x-1/2 rounded-full bg-white/[0.06] blur-3xl" />
         <div className="absolute -bottom-48 -left-40 h-[520px] w-[520px] rounded-full bg-white/[0.04] blur-3xl" />
       </div>
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+      <PatternHero
+        title="Get in Touch with Waitaa"
+        subtitle="Talk to our team about Ringa, Menu, or custom QR experiences for your business."
+      />
+
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-20">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-14 items-start">
           {/* Left: contact details */}
           <section className="pt-6 lg:pt-14">

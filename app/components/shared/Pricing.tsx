@@ -3,23 +3,23 @@
 import Image from "next/image";
 import { ArrowRight, CheckCircle, UtensilsCrossed } from "lucide-react";
 import { useState } from "react";
+import pricingData from "@/app/data/pricing-plans.json";
 
 const Pricing = () => {
   const [billingCycle, setBillingCycle] = useState("monthly");
 
-   const smallBusinessFeatures = [
-     "up to 10 tables/spots",
-     "English + 1 local language",
-     "Full revenue Allowance",
-   ];
-
-   const standardRestaurantFeatures = [
-     "Up to 30 tables",
-     "All 4 Nigerian Languages",
-     "Priority support",
-     "Custom restaurant branding",
-     "Peak hours analytics",
-   ];
+  const isYearly = billingCycle === "yearly";
+  const plans = pricingData.plans;
+  const smallPlan = plans.find((p) => p.key === "smallBusiness");
+  const standardPlan = plans.find((p) => p.key === "standardRestaurant");
+  const formatNaira = (amount: number) => {
+    if (amount >= 1000 && amount % 1000 === 0) {
+      return `₦${amount / 1000}K`;
+    }
+    return `₦${new Intl.NumberFormat("en-NG", {
+      maximumFractionDigits: 0,
+    }).format(amount)}`;
+  };
 
   return (
     <div className="w-full py-16 md:py-24 lg:py-32">
@@ -37,21 +37,19 @@ const Pricing = () => {
           <div className="inline-flex bg-white rounded-full shadow-sm">
             <button
               onClick={() => setBillingCycle("monthly")}
-              className={`px-6 py-3 rounded-full text-sm font-medium transition-colors hover:cursor-pointer ${
-                billingCycle === "monthly"
-                  ? "bg-[#689501] text-white"
-                  : "text-gray-600 hover:text-black"
-              }`}
+              className={`px-6 py-3 rounded-full text-sm font-medium transition-colors hover:cursor-pointer ${billingCycle === "monthly"
+                ? "bg-[#689501] text-white"
+                : "text-gray-600 hover:text-black"
+                }`}
             >
               MONTHLY
             </button>
             <button
               onClick={() => setBillingCycle("yearly")}
-              className={`px-6 py-3 rounded-full text-sm font-medium transition-colors hover:cursor-pointer ${
-                billingCycle === "yearly"
-                  ? "bg-[#689501] text-white"
-                  : "text-gray-600 hover:text-black"
-              }`}
+              className={`px-6 py-3 rounded-full text-sm font-medium transition-colors hover:cursor-pointer ${billingCycle === "yearly"
+                ? "bg-[#689501] text-white"
+                : "text-gray-600 hover:text-black"
+                }`}
             >
               YEARLY
             </button>
@@ -72,7 +70,7 @@ const Pricing = () => {
 
               <p className="text-base md:text-lg font-light mb-8 leading-relaxed">
                 Choose a plan and get onboard in minutes. Then get unlimited ads
-                for one month
+                {isYearly ? " for one year" : " for one month"}
               </p>
 
               <ArrowRight className="w-8 h-8 mb-8" />
@@ -94,14 +92,14 @@ const Pricing = () => {
             <div className="flex items-center mb-4">
               <UtensilsCrossed className="w-6 h-6 text-[var(--color-secondary)] mr-3" />
               <h3 className="text-2xl md:text-3xl font-bold text-[var(--color-secondary)]">
-                Small Business
+                {smallPlan?.name ?? "Small Business"}
               </h3>
             </div>
 
             <p className="text-gray-500 text-lg mb-8">What You'll Get</p>
 
             <div className="space-y-4 mb-8 flex-grow">
-              {smallBusinessFeatures.map((feature, index) => (
+              {(smallPlan?.features ?? []).map((feature, index) => (
                 <div key={index} className="flex items-center">
                   <CheckCircle className="w-5 h-5 text-[var(--color-secondary)] mr-3 flex-shrink-0" />
                   <span className="text-[var(--color-secondary)]">
@@ -114,9 +112,15 @@ const Pricing = () => {
 
               <div className="mb-8">
                 <span className="text-4xl md:text-5xl font-bold text-[var(--color-secondary)]">
-                  $20
+                  {formatNaira(
+                    isYearly
+                      ? smallPlan?.price?.yearly ?? 0
+                      : smallPlan?.price?.monthly ?? 0
+                  )}
                 </span>
-                <span className="text-gray-500 ml-1">/monthly</span>
+                <span className="text-gray-500 ml-1">
+                  {isYearly ? "/yearly" : "/monthly"}
+                </span>
               </div>
             </div>
 
@@ -131,14 +135,14 @@ const Pricing = () => {
             <div className="flex items-center mb-4">
               <UtensilsCrossed className="w-6 h-6 text-[var(--color-secondary)] mr-3" />
               <h3 className="text-2xl md:text-3xl font-bold text-[var(--color-secondary)]">
-                Standard Restaurant
+                {standardPlan?.name ?? "Standard Restaurant"}
               </h3>
             </div>
 
             <p className="text-gray-500 text-lg mb-8">What You'll Get</p>
 
             <div className="space-y-4 mb-8 flex-grow">
-              {standardRestaurantFeatures.map((feature, index) => (
+              {(standardPlan?.features ?? []).map((feature, index) => (
                 <div key={index} className="flex items-center">
                   <CheckCircle className="w-5 h-5 text-[var(--color-secondary)] mr-3 flex-shrink-0" />
                   <span className="text-[var(--color-secondary)]">
@@ -151,9 +155,15 @@ const Pricing = () => {
 
               <div className="mb-8">
                 <span className="text-4xl md:text-5xl font-bold text-[var(--color-secondary)]">
-                  $380
+                  {formatNaira(
+                    isYearly
+                      ? standardPlan?.price?.yearly ?? 0
+                      : standardPlan?.price?.monthly ?? 0
+                  )}
                 </span>
-                <span className="text-gray-500 ml-1">/monthly</span>
+                <span className="text-gray-500 ml-1">
+                  {isYearly ? "/yearly" : "/monthly"}
+                </span>
               </div>
             </div>
 

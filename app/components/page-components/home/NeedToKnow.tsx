@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import { useState } from "react";
+import Link from "next/link";
 
 const NeedToKnow = () => {
   const [email, setEmail] = useState("");
@@ -26,9 +27,12 @@ const NeedToKnow = () => {
             Boost Your Brand with our Expertise
           </h1>
 
-          <button className="text-[#1A1A1A] bg-white py-3 px-5 rounded-full">
+          <Link
+            href="/get-started"
+            className="text-[#1A1A1A] bg-white py-3 px-5 rounded-full inline-flex items-center justify-center"
+          >
             View Services
-          </button>
+          </Link>
         </div>
 
         {/* Service Cards Grid */}
@@ -40,7 +44,7 @@ const NeedToKnow = () => {
                 src="/images/qrCodeScanningGray.png"
                 alt="scanning qr code"
                 height={159}
-                width={245}
+                width={295}
                 className="relative z-0"
               />
               <div className="space-y-4">
@@ -62,7 +66,7 @@ const NeedToKnow = () => {
                 src="/images/qrCodeScanningGreen.png"
                 alt="scanning qr code"
                 height={159}
-                width={245}
+                width={295}
                 className="relative z-0"
               />
             </div>
@@ -75,7 +79,7 @@ const NeedToKnow = () => {
                 src="/images/qrCodeScanningGray.png"
                 alt="scanning qr code"
                 height={159}
-                width={245}
+                width={295}
                 className="relative z-0"
               />
               <h3 className="text-2xl font-semibold my-4">Visitor</h3>
@@ -98,7 +102,7 @@ const NeedToKnow = () => {
                 src="/images/qrCodeScanningGray.png"
                 alt="scanning qr code"
                 height={159}
-                width={245}
+                width={295}
                 className="relative z-0"
               />
             </div>
@@ -108,9 +112,14 @@ const NeedToKnow = () => {
 
       <div className="w-full mt-2 bg-[#e8f5b8] rounded-4xl px-4 py-16 md:py-24 lg:py-32">
         <div className="max-w-7xl mx-auto">
-          <h1 className="text-[#233200] font-normal text-4xl md:text-6xl lg:text-7xl xl:text-8xl leading-tight tracking-tight">
-            Africa's Leading QR Restaurant Service Solution
-          </h1>
+          <h2 className="text-[#233200] font-normal text-4xl md:text-6xl lg:text-7xl xl:text-8xl leading-tight tracking-tight">
+            Africa&apos;s Leading QR Customer Interaction Platform
+          </h2>
+          <p className="mt-6 text-[#233200]/80 text-base md:text-xl max-w-4xl leading-relaxed">
+            Built for restaurants, hotels, lounges, cafes, event centers, and
+            any customer service environment that needs faster service, smarter
+            ordering, and better engagement.
+          </p>
         </div>
       </div>
 

@@ -68,7 +68,14 @@ const Navbar = () => {
     syncFromHash();
     window.addEventListener("hashchange", syncFromHash);
 
-    const sectionIds = ["home", "features", "products"];
+    const sectionIds = [
+      "home",
+      "why-waitaa",
+      "products",
+      "ringa",
+      "menu",
+      "features",
+    ];
     const elements = sectionIds
       .map((id) => document.getElementById(id))
       .filter(Boolean) as HTMLElement[];
@@ -105,6 +112,7 @@ const Navbar = () => {
   const isProductsActive =
     isLandingPage && ["products", "ringa", "menu"].includes(activeSection);
   const isHomeActive = isLandingPage && activeSection === "home";
+  const isWhyWaitaaActive = isLandingPage && activeSection === "why-waitaa";
   const isFeaturesActive = isLandingPage && activeSection === "features";
 
   const scrollToSection = (id: string) => {
@@ -166,9 +174,20 @@ const Navbar = () => {
                   className={`text-base font-medium transition-colors ${isHomeActive
                     ? "text-[var(--color-primary)]"
                     : "text-white/90 hover:text-white"
-                    }`}
+                    } cursor-pointer`}
                 >
                   Home
+                </button>
+
+                <button
+                  type="button"
+                  onClick={() => scrollToSection("why-waitaa")}
+                  className={`text-base font-medium transition-colors ${isWhyWaitaaActive
+                    ? "text-[var(--color-primary)]"
+                    : "text-white/90 hover:text-white"
+                    } cursor-pointer`}
+                >
+                  Why Waitaa
                 </button>
 
                 <button
@@ -177,7 +196,7 @@ const Navbar = () => {
                   className={`text-base font-medium transition-colors ${isFeaturesActive
                     ? "text-[var(--color-primary)]"
                     : "text-white/90 hover:text-white"
-                    }`}
+                    } cursor-pointer`}
                 >
                   Features
                 </button>
@@ -193,7 +212,7 @@ const Navbar = () => {
                     className={`flex items-center text-base font-medium transition-colors group ${isProductsActive
                       ? "text-[var(--color-primary)]"
                       : "text-white/90 hover:text-white"
-                      }`}
+                      } cursor-pointer`}
                     aria-haspopup="menu"
                     aria-expanded={isProductsOpen}
                   >
@@ -202,27 +221,29 @@ const Navbar = () => {
                   </button>
 
                   {isProductsOpen && (
-                    <div className="absolute top-full left-0 mt-3 w-44 rounded-2xl bg-black/95 backdrop-blur-md shadow-lg ring-1 ring-white/10 overflow-hidden">
-                      <button
-                        type="button"
-                        onClick={() => {
-                          setIsProductsOpen(false);
-                          scrollToSection("ringa");
-                        }}
-                        className="w-full text-left px-4 py-3 text-white/90 hover:text-white hover:bg-white/10 transition-colors"
-                      >
-                        Ringa
-                      </button>
-                      <button
-                        type="button"
-                        onClick={() => {
-                          setIsProductsOpen(false);
-                          scrollToSection("menu");
-                        }}
-                        className="w-full text-left px-4 py-3 text-white/90 hover:text-white hover:bg-white/10 transition-colors"
-                      >
-                        Menu
-                      </button>
+                    <div className="absolute top-full left-0 w-44 pt-3">
+                      <div className="rounded-2xl bg-black/95 backdrop-blur-md shadow-lg ring-1 ring-white/10 overflow-hidden max-h-72 overflow-y-auto">
+                        <button
+                          type="button"
+                          onClick={() => {
+                            setIsProductsOpen(false);
+                            scrollToSection("ringa");
+                          }}
+                          className="w-full text-left px-4 py-3 text-white/90 hover:text-white hover:bg-white/10 transition-colors cursor-pointer"
+                        >
+                          Ringa
+                        </button>
+                        <button
+                          type="button"
+                          onClick={() => {
+                            setIsProductsOpen(false);
+                            scrollToSection("menu");
+                          }}
+                          className="w-full text-left px-4 py-3 text-white/90 hover:text-white hover:bg-white/10 transition-colors cursor-pointer"
+                        >
+                          Menu
+                        </button>
+                      </div>
                     </div>
                   )}
                 </div>
@@ -232,7 +253,7 @@ const Navbar = () => {
                   className={`text-base font-medium transition-colors ${isContactPage
                     ? "text-[var(--color-primary)]"
                     : "text-white/90 hover:text-white"
-                    }`}
+                    } cursor-pointer`}
                 >
                   Contact us
                 </Link>
@@ -307,7 +328,7 @@ const Navbar = () => {
               className={`block w-full text-left text-lg font-medium transition-colors ${isHomeActive
                 ? "text-[var(--color-primary)]"
                 : "text-white/90 hover:text-white"
-                }`}
+                } cursor-pointer`}
               onClick={() => {
                 setIsMobileMenuOpen(false);
                 scrollToSection("home");
@@ -318,10 +339,24 @@ const Navbar = () => {
 
             <button
               type="button"
+              className={`block w-full text-left text-lg font-medium transition-colors ${isWhyWaitaaActive
+                ? "text-[var(--color-primary)]"
+                : "text-white/90 hover:text-white"
+                } cursor-pointer`}
+              onClick={() => {
+                setIsMobileMenuOpen(false);
+                scrollToSection("why-waitaa");
+              }}
+            >
+              Why Waitaa
+            </button>
+
+            <button
+              type="button"
               className={`block w-full text-left text-lg font-medium transition-colors ${isFeaturesActive
                 ? "text-[var(--color-primary)]"
                 : "text-white/90 hover:text-white"
-                }`}
+                } cursor-pointer`}
               onClick={() => {
                 setIsMobileMenuOpen(false);
                 scrollToSection("features");
@@ -336,7 +371,7 @@ const Navbar = () => {
               className={`w-full text-left text-lg font-medium flex items-center justify-between transition-colors ${isProductsActive
                 ? "text-[var(--color-primary)]"
                 : "text-white/90 hover:text-white"
-                }`}
+                } cursor-pointer`}
               aria-expanded={isMobileProductsOpen}
             >
               Products
@@ -350,7 +385,7 @@ const Navbar = () => {
               <div className="pl-4 space-y-3">
                 <button
                   type="button"
-                  className="block w-full text-left text-base font-medium text-white/80 hover:text-white transition-colors"
+                  className="block w-full text-left text-base font-medium text-white/80 hover:text-white transition-colors cursor-pointer"
                   onClick={() => {
                     setIsMobileMenuOpen(false);
                     setIsMobileProductsOpen(false);
@@ -361,7 +396,7 @@ const Navbar = () => {
                 </button>
                 <button
                   type="button"
-                  className="block w-full text-left text-base font-medium text-white/80 hover:text-white transition-colors"
+                  className="block w-full text-left text-base font-medium text-white/80 hover:text-white transition-colors cursor-pointer"
                   onClick={() => {
                     setIsMobileMenuOpen(false);
                     setIsMobileProductsOpen(false);

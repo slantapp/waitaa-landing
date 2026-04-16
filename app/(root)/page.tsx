@@ -6,6 +6,9 @@ import Partners from "../components/page-components/home/Partners";
 import Pricing from "../components/shared/Pricing";
 import SocialProof from "../components/page-components/home/SocialProof";
 import Testimonials from "../components/page-components/home/Testimonials";
+import RingaSection from "../components/page-components/home/RingaSection";
+import MenuSection from "../components/page-components/home/MenuSection";
+import WhyWaitaaSection from "../components/page-components/home/WhyWaitaaSection";
 
 const Home = () => {
   return (
@@ -13,6 +16,9 @@ const Home = () => {
       <Hero />
       <Partners />
       <SocialProof />
+      <WhyWaitaaSection />
+      <MenuSection />
+      <RingaSection />
       <NeedToKnow />
       <Pricing />
       <Testimonials />

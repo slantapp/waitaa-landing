@@ -17,7 +17,7 @@ const Partners = () => {
   return (
     <section className="overflow-hidden ">
       <p className="uppercase text-center mt-20 font-medium text-sm sm:text-base">
-        Featured and seen in
+        Trusted by modern businesses using Waitaa
       </p>
 
       {/* Container for scrolling logos */}

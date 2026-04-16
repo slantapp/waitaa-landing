@@ -5,8 +5,9 @@ import { ArrowLeft, ArrowRight } from "lucide-react";
 import { useState, useEffect } from "react";
 
 const Testimonials = () => {
-  const [currentIndex, setCurrentIndex] = useState(1); 
+  const [currentIndex, setCurrentIndex] = useState(1);
   const [isTransitioning, setIsTransitioning] = useState(true);
+  const [perView, setPerView] = useState(1);
 
   const testimonials = [
     {
@@ -77,6 +78,20 @@ const Testimonials = () => {
     }
   }, [currentIndex, testimonials.length]);
 
+  useEffect(() => {
+    const computePerView = () => {
+      const w = window.innerWidth;
+      if (w >= 1024) return 3; // lg
+      if (w >= 640) return 2; // sm
+      return 1;
+    };
+
+    const onResize = () => setPerView(computePerView());
+    onResize();
+    window.addEventListener("resize", onResize);
+    return () => window.removeEventListener("resize", onResize);
+  }, []);
+
   // Get actual index for dot indicators
   const getActualIndex = () => {
     if (currentIndex === 0) return testimonials.length - 1;
@@ -110,79 +125,57 @@ const Testimonials = () => {
           </div>
         </div>
 
-        {/* Testimonials Carousel */}
+        {/* Testimonials Carousel (moves one item at a time) */}
         <div className="relative overflow-hidden">
           <div
-            className={`flex ${
-              isTransitioning
-                ? "transition-transform duration-500 ease-in-out"
-                : ""
-            }`}
-            style={{ transform: `translateX(-${currentIndex * 100}%)` }}
+            className={`flex gap-6 ${isTransitioning ? "transition-transform duration-500 ease-in-out" : ""
+              }`}
+            style={{
+              transform: `translateX(-${currentIndex * (100 / perView)}%)`,
+            }}
           >
             {infiniteTestimonials.map((testimonial, index) => {
-              // Get other testimonials for secondary cards
-              const otherTestimonials = testimonials.filter(
-                (t) => t.id !== testimonial.id
-              );
-
+              const isActive = index === currentIndex;
               return (
-                <div key={`slide-${index}`} className="w-full flex-shrink-0">
-                  <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-                    {/* Featured Testimonial (Left) */}
-                    <div className="lg:col-span-1">
-                      <div className="bg-[#689501] rounded-3xl p-8 text-white h-full">
-                        <div className="flex items-center mb-6">
-                          <div className="relative w-16 h-16 rounded-full overflow-hidden mr-4">
-                            <Image
-                              src={testimonial.image}
-                              alt={testimonial.name}
-                              fill
-                              className="object-cover"
-                            />
-                          </div>
-                          <div>
-                            <h3 className="text-xl font-semibold">
-                              {testimonial.name}
-                            </h3>
-                            <p className="font-semibold">{testimonial.title}</p>
-                          </div>
-                        </div>
-                        <p className=" leading-relaxed">{testimonial.text}</p>
+                <div
+                  key={`card-${index}`}
+                  className="flex-shrink-0"
+                  style={{ width: `${100 / perView}%` }}
+                >
+                  <div
+                    className={`rounded-3xl p-6 sm:p-8 shadow-sm h-full ${isActive ? "bg-[#689501] text-white" : "bg-[#F4F2EA]"
+                      }`}
+                  >
+                    <div className="flex items-center mb-6">
+                      <div className="relative w-16 h-16 rounded-full overflow-hidden mr-4">
+                        <Image
+                          src={testimonial.image}
+                          alt={testimonial.name}
+                          fill
+                          className="object-cover"
+                        />
+                      </div>
+                      <div>
+                        <h3
+                          className={`text-xl font-semibold ${isActive ? "text-white" : "text-[var(--color-secondary)]"
+                            }`}
+                        >
+                          {testimonial.name}
+                        </h3>
+                        <p
+                          className={`font-semibold ${isActive ? "text-white/90" : "text-gray-500"
+                            }`}
+                        >
+                          {testimonial.title}
+                        </p>
                       </div>
                     </div>
-
-                    {/* Other Testimonials (Right) */}
-                    <div className="lg:col-span-2 grid grid-cols-1 md:grid-cols-2 gap-6">
-                      {otherTestimonials.slice(0, 2).map((otherTestimonial) => (
-                        <div
-                          key={`secondary-${otherTestimonial.id}-${index}`}
-                          className="bg-[#F4F2EA] rounded-3xl p-8 shadow-sm"
-                        >
-                          <div className="flex items-center mb-6">
-                            <div className="relative w-16 h-16 rounded-full overflow-hidden mr-4">
-                              <Image
-                                src={otherTestimonial.image}
-                                alt={otherTestimonial.name}
-                                fill
-                                className="object-cover"
-                              />
-                            </div>
-                            <div>
-                              <h3 className="text-xl font-semibold text-[var(--color-secondary)]">
-                                {otherTestimonial.name}
-                              </h3>
-                              <p className="text-gray-500 font-semibold">
-                                {otherTestimonial.title}
-                              </p>
-                            </div>
-                          </div>
-                          <p className="text-[var(--color-secondary)] leading-relaxed">
-                            {otherTestimonial.text}
-                          </p>
-                        </div>
-                      ))}
-                    </div>
+                    <p
+                      className={`leading-relaxed ${isActive ? "text-white/90" : "text-[var(--color-secondary)]"
+                        }`}
+                    >
+                      {testimonial.text}
+                    </p>
                   </div>
                 </div>
               );
@@ -196,9 +189,8 @@ const Testimonials = () => {
             <button
               key={index}
               onClick={() => setCurrentIndex(index + 1)} // +1 because of cloned first item
-              className={`w-3 h-3 rounded-full transition-colors ${
-                index === getActualIndex() ? "bg-[#689501]" : "bg-gray-300"
-              }`}
+              className={`w-3 h-3 rounded-full transition-colors ${index === getActualIndex() ? "bg-[#689501]" : "bg-gray-300"
+                }`}
             />
           ))}
         </div>
