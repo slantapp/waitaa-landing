@@ -6,8 +6,8 @@ import ClosingCta from "@/app/components/page-components/get-started/ClosingCta"
 import type { SignupLink } from "@/app/components/page-components/get-started/types";
 
 export default function GetStartedPage() {
-  const ringaSignupUrl = process.env.NEXT_PUBLIC_RINGA_SIGNUP_URL;
-  const menuSignupUrl = process.env.NEXT_PUBLIC_MENU_SIGNUP_URL;
+  const ringaSignupUrl = '#';
+  const menuSignupUrl = '#';
 
   const ringaLink: SignupLink = {
     url: ringaSignupUrl,

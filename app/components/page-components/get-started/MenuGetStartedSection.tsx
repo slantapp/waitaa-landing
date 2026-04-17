@@ -52,25 +52,17 @@ export default function MenuGetStartedSection({ menu }: Props) {
             </ul>
 
             <div className="mt-8 flex flex-col sm:flex-row gap-4">
-              {menu.enabled ? (
-                <a
-                  href={menu.url}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="inline-flex items-center justify-center h-12 px-7 rounded-full font-semibold transition-opacity bg-[var(--color-primary)] text-[var(--color-secondary)] hover:opacity-90"
-                >
-                  Get Started / Sign up
-                  <ArrowRight className="ml-2 h-4 w-4" />
-                </a>
-              ) : (
-                <span
-                  aria-disabled="true"
-                  className="inline-flex items-center justify-center h-12 px-7 rounded-full font-semibold bg-white/10 border border-white/10 text-white/60 cursor-not-allowed select-none"
-                >
-                  Get Started / Sign up
-                  <ArrowRight className="ml-2 h-4 w-4" />
-                </span>
-              )}
+
+              <a
+                href={menu.url}
+                // target="_blank"
+                rel="noreferrer"
+                className="inline-flex items-center justify-center h-12 px-7 rounded-full font-semibold transition-opacity bg-[var(--color-primary)] text-[var(--color-secondary)] hover:opacity-90"
+              >
+                Get Started / Sign up
+                <ArrowRight className="ml-2 h-4 w-4" />
+              </a>
+
               <Link
                 href="/contact-us"
                 className="inline-flex items-center justify-center h-12 px-7 rounded-full bg-white/10 border border-white/10 text-white font-semibold hover:bg-white/15 transition-colors"

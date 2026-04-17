@@ -26,45 +26,26 @@ export default function GetStartedHero({ ringa, menu }: Props) {
         </p>
 
         <div className="mt-8 flex flex-col sm:flex-row gap-4">
-          {ringa.enabled ? (
-            <a
-              href={ringa.url}
-              target="_blank"
-              rel="noreferrer"
-              className="inline-flex items-center justify-center h-12 px-7 rounded-full font-semibold transition-opacity bg-[var(--color-primary)] text-[var(--color-secondary)] hover:opacity-90"
-            >
-              Get Started with Ringa
-              <ArrowRight className="ml-2 h-4 w-4" />
-            </a>
-          ) : (
-            <span
-              aria-disabled="true"
-              className="inline-flex items-center justify-center h-12 px-7 rounded-full font-semibold bg-white/10 border border-white/10 text-white/60 cursor-not-allowed select-none"
-            >
-              Get Started with Ringa
-              <ArrowRight className="ml-2 h-4 w-4" />
-            </span>
-          )}
 
-          {menu.enabled ? (
-            <a
-              href={menu.url}
-              target="_blank"
-              rel="noreferrer"
-              className="inline-flex items-center justify-center h-12 px-7 rounded-full font-semibold transition-colors bg-white/10 border border-white/10 text-white hover:bg-white/15"
-            >
-              Get Started with Menu
-              <ArrowRight className="ml-2 h-4 w-4" />
-            </a>
-          ) : (
-            <span
-              aria-disabled="true"
-              className="inline-flex items-center justify-center h-12 px-7 rounded-full font-semibold bg-white/10 border border-white/10 text-white/60 cursor-not-allowed select-none"
-            >
-              Get Started with Menu
-              <ArrowRight className="ml-2 h-4 w-4" />
-            </span>
-          )}
+          <a
+            href={ringa.url}
+            // target="_blank"
+            rel="noreferrer"
+            className="inline-flex items-center justify-center h-12 px-7 rounded-full font-semibold transition-opacity bg-[var(--color-primary)] text-[var(--color-secondary)] hover:opacity-90"
+          >
+            Get Started with Ringa
+            <ArrowRight className="ml-2 h-4 w-4" />
+          </a>
+          <a
+            href={menu.url}
+            // target="_blank"
+            rel="noreferrer"
+            className="inline-flex items-center justify-center h-12 px-7 rounded-full font-semibold transition-colors bg-white/10 border border-white/10 text-white hover:bg-white/15"
+          >
+            Get Started with Menu
+            <ArrowRight className="ml-2 h-4 w-4" />
+          </a>
+
         </div>
       </div>
 
