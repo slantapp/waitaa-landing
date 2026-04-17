@@ -135,17 +135,13 @@ const Testimonials = () => {
             }}
           >
             {infiniteTestimonials.map((testimonial, index) => {
-              const isActive = index === currentIndex;
               return (
                 <div
                   key={`card-${index}`}
                   className="flex-shrink-0"
                   style={{ width: `${100 / perView}%` }}
                 >
-                  <div
-                    className={`rounded-3xl p-6 sm:p-8 shadow-sm h-full ${isActive ? "bg-[#689501] text-white" : "bg-[#F4F2EA]"
-                      }`}
-                  >
+                  <div className="rounded-3xl p-6 sm:p-8 shadow-sm h-full bg-[#F4F2EA]">
                     <div className="flex items-center mb-6">
                       <div className="relative w-16 h-16 rounded-full overflow-hidden mr-4">
                         <Image
@@ -156,24 +152,15 @@ const Testimonials = () => {
                         />
                       </div>
                       <div>
-                        <h3
-                          className={`text-xl font-semibold ${isActive ? "text-white" : "text-[var(--color-secondary)]"
-                            }`}
-                        >
+                        <h3 className="text-xl font-semibold text-[var(--color-secondary)]">
                           {testimonial.name}
                         </h3>
-                        <p
-                          className={`font-semibold ${isActive ? "text-white/90" : "text-gray-500"
-                            }`}
-                        >
+                        <p className="font-semibold text-gray-500">
                           {testimonial.title}
                         </p>
                       </div>
                     </div>
-                    <p
-                      className={`leading-relaxed ${isActive ? "text-white/90" : "text-[var(--color-secondary)]"
-                        }`}
-                    >
+                    <p className="leading-relaxed text-[var(--color-secondary)]">
                       {testimonial.text}
                     </p>
                   </div>
@@ -189,7 +176,7 @@ const Testimonials = () => {
             <button
               key={index}
               onClick={() => setCurrentIndex(index + 1)} // +1 because of cloned first item
-              className={`w-3 h-3 rounded-full transition-colors ${index === getActualIndex() ? "bg-[#689501]" : "bg-gray-300"
+              className={`w-3 h-3 rounded-full transition-colors ${index === getActualIndex() ? "bg-gray-600" : "bg-gray-300"
                 }`}
             />
           ))}
