@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import { Facebook, Instagram, Linkedin, X } from "lucide-react";
 import {
   Select,
@@ -7,6 +8,12 @@ import {
   SelectValue,
 } from "@/app/components/ui/select";
 import PatternHero from "@/app/components/shared/PatternHero";
+
+export const metadata: Metadata = {
+  title: "Contact us",
+  description:
+    "Get in touch with Waitaa. Reach our team for questions about Ringa, Menu, pricing, or partnerships.",
+};
 
 export default function ContactUsPage() {
   return (
@@ -46,7 +53,7 @@ export default function ContactUsPage() {
               <div>
                 <p className="text-white/60 text-sm mb-1">Assistance hours:</p>
                 <p className="font-medium text-white">
-                  Monday - Friday 6 am to 8 pm EST
+                  Monday through Friday, 6 a.m. to 8 p.m. EST
                 </p>
               </div>
 

@@ -1,9 +1,17 @@
+import type { Metadata } from "next";
+
 import PatternHero from "@/app/components/shared/PatternHero";
 import GetStartedHero from "@/app/components/page-components/get-started/GetStartedHero";
 import RingaGetStartedSection from "@/app/components/page-components/get-started/RingaGetStartedSection";
 import MenuGetStartedSection from "@/app/components/page-components/get-started/MenuGetStartedSection";
 import ClosingCta from "@/app/components/page-components/get-started/ClosingCta";
 import type { SignupLink } from "@/app/components/page-components/get-started/types";
+
+export const metadata: Metadata = {
+  title: "Get started",
+  description:
+    "Choose Ringa for smart customer calling or Menu for QR ordering. Get started with Waitaa in minutes.",
+};
 
 export default function GetStartedPage() {
   const ringaSignupUrl = '#';

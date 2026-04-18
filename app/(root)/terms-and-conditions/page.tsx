@@ -1,4 +1,11 @@
+import type { Metadata } from "next";
 import Link from "next/link";
+
+export const metadata: Metadata = {
+  title: "Terms & conditions",
+  description:
+    "Terms and conditions for using Waitaa's website and services. Please read before using our products.",
+};
 
 export default function TermsAndConditionsPage() {
   return (

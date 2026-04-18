@@ -13,7 +13,7 @@ export default function GetStartedHero({ ringa, menu }: Props) {
       <div className="pt-6">
         <div className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-2 text-white/80">
           <Sparkles className="h-4 w-4 text-[var(--color-primary)]" />
-          <span className="text-sm">WAITAA - Smart Customer Interaction</span>
+          <span className="text-sm">Waitaa for smart customer interaction</span>
         </div>
 
         <h1 className="mt-6 text-white text-4xl md:text-5xl lg:text-6xl font-semibold leading-tight">
@@ -21,7 +21,7 @@ export default function GetStartedHero({ ringa, menu }: Props) {
         </h1>
         <p className="mt-5 text-white/70 text-base md:text-lg max-w-xl leading-relaxed">
           Eliminate wait times, improve service speed, and unlock new revenue
-          streams — all with one platform. Choose a product below to start in
+          streams from one platform. Choose a product below to get started in
           minutes.
         </p>
 
@@ -74,7 +74,8 @@ export default function GetStartedHero({ ringa, menu }: Props) {
             <div className="rounded-2xl bg-white/5 border border-white/10 p-5">
               <p className="text-white font-semibold">Easy Setup</p>
               <p className="mt-2 text-white/70 text-sm">
-                No hardware required — just QR codes and devices.
+                No extra hardware is required. QR codes and the devices you
+                already use are enough.
               </p>
             </div>
           </div>

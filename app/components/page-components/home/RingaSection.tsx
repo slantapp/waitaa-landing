@@ -15,10 +15,10 @@ export default function RingaSection() {
                 Digital waiter calling system without hardware
               </h2>
               <p className="mt-5 text-white/70 text-base md:text-lg leading-relaxed max-w-xl">
-                Ringa is Waitaa’s smart customer-to-staff communication tool.
+                Ringa is Waitaa&apos;s smart customer-to-staff communication tool.
                 Customers scan a QR code to call a waiter, request service, or
-                send a message—while your team receives real-time notifications
-                with exact table/location.
+                send a message, and your team gets real-time notifications with
+                the exact table or location.
               </p>
 
               <div className="mt-8 grid grid-cols-1 sm:grid-cols-2 gap-4">
@@ -27,7 +27,7 @@ export default function RingaSection() {
                     Instant communication
                   </p>
                   <p className="mt-2 text-white/70 text-sm leading-relaxed">
-                    No shouting, no waiting—requests reach staff instantly.
+                    No shouting and no guessing. Requests reach staff right away.
                   </p>
                 </div>
                 <div className="rounded-2xl bg-white/5 border border-white/10 p-5">
@@ -74,7 +74,7 @@ export default function RingaSection() {
                   <div>
                     <p className="text-white/70 text-sm">How it works</p>
                     <p className="text-white text-xl font-semibold mt-1">
-                      Scan → Request → Notify → Respond
+                      Scan, request, notify, respond
                     </p>
                   </div>
                   <div className="relative w-14 h-14">

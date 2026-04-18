@@ -27,8 +27,8 @@ export default function RingaGetStartedSection({ ringa }: Props) {
             </div>
 
             <p className="mt-5 text-white/70 leading-relaxed">
-              Smart customer calling & communication — customers scan a QR code
-              to instantly notify staff, with real-time tracking and performance
+              Smart customer calling and communication: guests scan a QR code to
+              notify staff instantly, with real-time tracking and performance
               insights.
             </p>
 

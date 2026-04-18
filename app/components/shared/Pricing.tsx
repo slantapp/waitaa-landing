@@ -1,17 +1,52 @@
 "use client";
 
 import Image from "next/image";
-import { ArrowRight, CheckCircle, UtensilsCrossed } from "lucide-react";
+import { ArrowRight, CheckCircle, UtensilsCrossed, XCircle } from "lucide-react";
 import { useState } from "react";
 import pricingData from "@/app/data/pricing-plans.json";
+
+type PlanRow = { label: string; included: boolean };
+type PricingPlan = {
+  key: string;
+  name: string;
+  rows: PlanRow[];
+  price: { monthly: number; yearly: number };
+};
+type PricingJson = {
+  plans: PricingPlan[];
+};
 
 const Pricing = () => {
   const [billingCycle, setBillingCycle] = useState("monthly");
 
   const isYearly = billingCycle === "yearly";
-  const plans = pricingData.plans;
+  const data = pricingData as PricingJson;
+  const { plans } = data;
   const smallPlan = plans.find((p) => p.key === "smallBusiness");
   const standardPlan = plans.find((p) => p.key === "standardRestaurant");
+
+  const renderPlanRows = (rows: PlanRow[] | undefined) => (
+    <>
+      {(rows ?? []).map((row, index) => (
+        <div key={`${row.label}-${index}`} className="flex items-start gap-3">
+          {row.included ? (
+            <CheckCircle className="w-5 h-5 mt-0.5 text-[var(--color-secondary)] shrink-0" />
+          ) : (
+            <XCircle className="w-5 h-5 mt-0.5 text-gray-300 shrink-0" />
+          )}
+          <span
+            className={
+              row.included
+                ? "text-[var(--color-secondary)]"
+                : "text-gray-400 line-through"
+            }
+          >
+            {row.label}
+          </span>
+        </div>
+      ))}
+    </>
+  );
   const formatNaira = (amount: number) => {
     if (amount >= 1000 && amount % 1000 === 0) {
       return `₦${amount / 1000}K`;
@@ -30,7 +65,7 @@ const Pricing = () => {
             Simple, Transparent Pricing
           </h2>
           <p className="text-[#233200] text-lg md:text-xl mb-8">
-            With this platform, No contracts. No surprise fees.
+            No long-term contracts and no surprise fees.
           </p>
 
           {/* Billing Toggle */}
@@ -99,14 +134,7 @@ const Pricing = () => {
             <p className="text-gray-500 text-lg mb-8">What You'll Get</p>
 
             <div className="space-y-4 mb-8 flex-grow">
-              {(smallPlan?.features ?? []).map((feature, index) => (
-                <div key={index} className="flex items-center">
-                  <CheckCircle className="w-5 h-5 text-[var(--color-secondary)] mr-3 flex-shrink-0" />
-                  <span className="text-[var(--color-secondary)]">
-                    {feature}
-                  </span>
-                </div>
-              ))}
+              {renderPlanRows(smallPlan?.rows)}
 
               <div className="border-t-2 border-dotted border-gray-400 w-full"></div>
 
@@ -131,7 +159,6 @@ const Pricing = () => {
 
           {/* Standard Restaurant Plan */}
           <div className="bg-[#F4F2EA] rounded-3xl p-8 shadow-sm flex flex-col">
-            <div></div>
             <div className="flex items-center mb-4">
               <UtensilsCrossed className="w-6 h-6 text-[var(--color-secondary)] mr-3" />
               <h3 className="text-2xl md:text-3xl font-bold text-[var(--color-secondary)]">
@@ -142,14 +169,7 @@ const Pricing = () => {
             <p className="text-gray-500 text-lg mb-8">What You'll Get</p>
 
             <div className="space-y-4 mb-8 flex-grow">
-              {(standardPlan?.features ?? []).map((feature, index) => (
-                <div key={index} className="flex items-center">
-                  <CheckCircle className="w-5 h-5 text-[var(--color-secondary)] mr-3 flex-shrink-0" />
-                  <span className="text-[var(--color-secondary)]">
-                    {feature}
-                  </span>
-                </div>
-              ))}
+              {renderPlanRows(standardPlan?.rows)}
 
               <div className="border-t-2 border-dotted border-gray-400 w-full"></div>
 

@@ -10,7 +10,7 @@ const Faq = () => {
     {
       question: "What is Waitaa, and who is it for?",
       answer:
-        "Waitaa is a smart customer interaction ecosystem for restaurants, hotels, lounges, cafes, and other service environments. We help you connect with customers via QR-based calling, ordering, and engagement—without adding friction to the experience.",
+        "Waitaa is a smart customer interaction ecosystem for restaurants, hotels, lounges, cafes, and other service environments. We help you connect with customers through QR-based calling, ordering, and engagement while keeping the experience smooth for guests.",
     },
     {
       question: "What products do you offer (Ringa vs Menu)?",

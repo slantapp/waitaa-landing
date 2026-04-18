@@ -1,7 +1,14 @@
+import type { Metadata } from "next";
+
 import Faq from "@/app/components/shared/Faq";
 import Newsletter from "@/app/components/shared/Newsletter";
 import PricingSection from "@/app/components/shared/Pricing";
 
+export const metadata: Metadata = {
+  title: "Pricing",
+  description:
+    "Simple, transparent Waitaa pricing for Small Business and Standard plans. Monthly or yearly billing in Naira.",
+};
 
 const Pricing = () => {
   return (

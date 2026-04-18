@@ -147,11 +147,10 @@ const NeedToKnow = () => {
                   </h2>
 
                   <p className="text-white text-base md:text-lg lg:text-xl leading-relaxed max-w-lg">
-                    Let your customers order directly from you, where they are
-                    Transform your Lagos, Abuja, Cape Town, Nairobi, or Accra
-                    restaurant with Africa's most advanced QR code service
-                    system. No expensive hardware - customers simply scan and
-                    request service!
+                    Let your customers order directly from you wherever they are.
+                    Bring a modern QR service flow to your Lagos, Abuja, Cape
+                    Town, Nairobi, or Accra venue without buying expensive
+                    hardware. Guests scan a code and request service in seconds.
                   </p>
                 </div>
 

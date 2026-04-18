@@ -20,6 +20,7 @@ const Navbar = () => {
   // Check if we're on the landing page
   const isLandingPage = pathname === "/";
   const isContactPage = pathname === "/contact-us";
+  const isAboutPage = pathname === "/about-us";
 
   useEffect(() => {
     const controlNavbar = () => {
@@ -190,16 +191,6 @@ const Navbar = () => {
                   Why Waitaa
                 </button>
 
-                <button
-                  type="button"
-                  onClick={() => scrollToSection("features")}
-                  className={`text-base font-medium transition-colors ${isFeaturesActive
-                    ? "text-[var(--color-primary)]"
-                    : "text-white/90 hover:text-white"
-                    } cursor-pointer`}
-                >
-                  Features
-                </button>
 
                 <div
                   className="relative"
@@ -247,6 +238,27 @@ const Navbar = () => {
                     </div>
                   )}
                 </div>
+
+                <button
+                  type="button"
+                  onClick={() => scrollToSection("features")}
+                  className={`text-base font-medium transition-colors ${isFeaturesActive
+                    ? "text-[var(--color-primary)]"
+                    : "text-white/90 hover:text-white"
+                    } cursor-pointer`}
+                >
+                  Features
+                </button>
+
+                <Link
+                  href="/about-us"
+                  className={`text-base font-medium transition-colors ${isAboutPage
+                    ? "text-[var(--color-primary)]"
+                    : "text-white/90 hover:text-white"
+                    } cursor-pointer`}
+                >
+                  About us
+                </Link>
 
                 <Link
                   href="/contact-us"
@@ -364,6 +376,17 @@ const Navbar = () => {
             >
               Features
             </button>
+
+            <Link
+              href="/about-us"
+              className={`block text-lg font-medium transition-colors ${isAboutPage
+                ? "text-[var(--color-primary)]"
+                : "text-white/90 hover:text-white"
+                }`}
+              onClick={() => setIsMobileMenuOpen(false)}
+            >
+              About us
+            </Link>
 
             <button
               type="button"

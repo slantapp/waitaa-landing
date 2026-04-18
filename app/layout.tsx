@@ -14,7 +14,7 @@ export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: {
     default: title,
-    template: `%s | ${title}`,
+    template: `Waitaa - %s`,
   },
   description,
   applicationName: title,
@@ -55,7 +55,7 @@ export const metadata: Metadata = {
         url: "/images/landingPageHero1.webp",
         width: 1200,
         height: 630,
-        alt: "Waitaa — Smart Customer Interaction for Modern Businesses",
+        alt: "Waitaa: smart customer interaction for modern businesses",
       },
     ],
   },

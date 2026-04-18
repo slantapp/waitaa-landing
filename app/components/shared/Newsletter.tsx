@@ -29,10 +29,10 @@ const Newsletter = () => {
           {/* Header */}
           <div className="text-center lg:text-left">
             <h2 className="text-white text-3xl md:text-4xl lg:text-5xl lg:w-1/2 font-normal mb-6 leading-tight max-w-4xl lg:mx-0 mx-auto">
-              Download the Waitaa App & Get Free Ads
+              Scan a QR code and use Waitaa in your browser.
             </h2>
             <p className="text-white/80 text-lg md:text-xl mb-8 max-w-2xl lg:mx-0 mx-auto">
-              Join our newsletter to stay upto date on features and realeases.
+              Join our newsletter to stay up to date on features and releases.
             </p>
 
             {/* Email Signup */}

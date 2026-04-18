@@ -1,4 +1,11 @@
+import type { Metadata } from "next";
 import Link from "next/link";
+
+export const metadata: Metadata = {
+  title: "Privacy policy",
+  description:
+    "Read how Waitaa collects, uses, and protects your information when you use our website and services.",
+};
 
 export default function PrivacyPolicyPage() {
   return (

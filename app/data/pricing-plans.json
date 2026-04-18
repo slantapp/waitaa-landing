@@ -3,10 +3,12 @@
     {
       "key": "smallBusiness",
       "name": "Small Business",
-      "features": [
-        "up to 10 tables/spots",
-        "English + 1 local language",
-        "Full revenue Allowance"
+      "rows": [
+        { "label": "up to 10 tables/spots", "included": true },
+        { "label": "English + 1 local language", "included": true },
+        { "label": "Full revenue Allowance", "included": true },
+        { "label": "Priority support", "included": true },
+        { "label": "Custom branding", "included": false }
       ],
       "price": {
         "monthly": 10000,
@@ -16,12 +18,12 @@
     {
       "key": "standardRestaurant",
       "name": "Standard Restaurant",
-      "features": [
-        "Up to 30 tables",
-        "All 4 Nigerian Languages",
-        "Priority support",
-        "Custom restaurant branding",
-        "Peak hours analytics"
+      "rows": [
+        { "label": "Up to 30 tables", "included": true },
+        { "label": "All 4 Nigerian Languages", "included": true },
+        { "label": "Priority support", "included": true },
+        { "label": "Custom branding", "included": true },
+        { "label": "Peak hours analytics", "included": true }
       ],
       "price": {
         "monthly": 30000,

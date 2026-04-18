@@ -13,7 +13,13 @@ const Footer = () => {
           </div>
 
           {/* Navigation Links */}
-          <div className="flex font-semibold gap-8 md:gap-12">
+          <div className="flex flex-wrap justify-center font-semibold gap-6 md:gap-12">
+            <a
+              href="/about-us"
+              className="text-white/80 text-sm md:text-base hover:text-white transition-colors"
+            >
+              About us
+            </a>
             <a
               href="/privacy-policy"
               className="text-white/80 text-sm md:text-base hover:text-white transition-colors"

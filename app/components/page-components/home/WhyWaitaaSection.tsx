@@ -1,4 +1,10 @@
 import Link from "next/link";
+import {
+  BarChart3,
+  CircleDollarSign,
+  Rocket,
+  Workflow,
+} from "lucide-react";
 
 export default function WhyWaitaaSection() {
   return (
@@ -16,7 +22,7 @@ export default function WhyWaitaaSection() {
               <p className="mt-4 text-white/70 leading-relaxed">
                 Waitaa helps restaurants, hotels, lounges, and public spaces
                 upgrade customer experience with QR-based calling, ordering, and
-                ads monetization—without expensive hardware.
+                ads monetization, without buying expensive hardware.
               </p>
 
               <div className="mt-8 flex flex-col sm:flex-row gap-4">
@@ -38,22 +44,31 @@ export default function WhyWaitaaSection() {
             <div className="flex-1">
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div className="rounded-2xl bg-white/5 border border-white/10 p-6">
-                  <p className="text-white font-semibold">🚀 Faster Service</p>
+                  <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-white/10 border border-white/10">
+                    <Rocket className="h-5 w-5 text-[var(--color-primary)]" />
+                  </div>
+                  <p className="mt-4 text-white font-semibold">Faster Service</p>
                   <p className="mt-2 text-white/70 text-sm leading-relaxed">
                     Reduce wait times and improve customer satisfaction with
                     instant requests and real-time updates.
                   </p>
                 </div>
                 <div className="rounded-2xl bg-white/5 border border-white/10 p-6">
-                  <p className="text-white font-semibold">💡 Smart Automation</p>
+                  <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-white/10 border border-white/10">
+                    <Workflow className="h-5 w-5 text-[var(--color-primary)]" />
+                  </div>
+                  <p className="mt-4 text-white font-semibold">Smart Automation</p>
                   <p className="mt-2 text-white/70 text-sm leading-relaxed">
-                    Digitize communication and ordering workflows—clean,
-                    trackable, and efficient.
+                    Digitize communication and ordering workflows so they stay
+                    clean, trackable, and efficient.
                   </p>
                 </div>
                 <div className="rounded-2xl bg-white/5 border border-white/10 p-6">
-                  <p className="text-white font-semibold">
-                    💰 New Revenue Channels
+                  <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-white/10 border border-white/10">
+                    <CircleDollarSign className="h-5 w-5 text-[var(--color-primary)]" />
+                  </div>
+                  <p className="mt-4 text-white font-semibold">
+                    New Revenue Channels
                   </p>
                   <p className="mt-2 text-white/70 text-sm leading-relaxed">
                     Earn from ads while serving customers via QR scan ads and
@@ -61,7 +76,12 @@ export default function WhyWaitaaSection() {
                   </p>
                 </div>
                 <div className="rounded-2xl bg-white/5 border border-white/10 p-6">
-                  <p className="text-white font-semibold">📊 Data-Driven Insights</p>
+                  <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-white/10 border border-white/10">
+                    <BarChart3 className="h-5 w-5 text-[var(--color-primary)]" />
+                  </div>
+                  <p className="mt-4 text-white font-semibold">
+                    Data-Driven Insights
+                  </p>
                   <p className="mt-2 text-white/70 text-sm leading-relaxed">
                     Track performance, customer behavior, and engagement with
                     actionable analytics.

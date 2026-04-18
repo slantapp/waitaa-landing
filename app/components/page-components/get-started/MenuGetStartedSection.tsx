@@ -27,9 +27,9 @@ export default function MenuGetStartedSection({ menu }: Props) {
             </div>
 
             <p className="mt-5 text-white/70 leading-relaxed">
-              Seamless QR-based ordering — customers browse and order from their
-              phones, while your team receives orders instantly and updates
-              status in real time.
+              Seamless QR-based ordering lets customers browse and order from
+              their phones. Your team receives each order right away and can
+              update status in real time.
             </p>
 
             <ul className="mt-6 space-y-3 text-white/75">
