@@ -1,19 +1,26 @@
 "use client";
 
+import Image from "next/image";
 import { FaInstagram, FaTwitter, FaLinkedin } from "react-icons/fa";
 
 const Footer = () => {
   return (
     <div className="w-full bg-black max-w-7xl mx-auto my-10 rounded-4xl py-8 shadow-[0_0_0_1px_rgba(255,255,255,0.06)]">
-      <div className="max-w-7xl mx-auto px-4">
-        <div className="flex flex-col md:flex-row justify-between items-center gap-6">
-          {/* Copyright */}
-          <div className="text-white/80 text-sm md:text-base">
-            © 2026 Waitaa. All Right Reserved
+      <div className="max-w-7xl mx-auto px-10 flex flex-col gap-8">
+        <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-8">
+          <div className="flex justify-center lg:justify-start shrink-0">
+            <Image
+              src="/images/logo.png"
+              width={51}
+              height={35}
+              alt="Waitaa"
+            />
           </div>
 
-          {/* Navigation Links */}
-          <div className="flex flex-wrap justify-center font-semibold gap-6 md:gap-12">
+          <nav
+            className="flex flex-wrap justify-center font-semibold gap-x-6 gap-y-3 sm:gap-x-8 lg:flex-1 lg:justify-center lg:px-6"
+            aria-label="Footer"
+          >
             <a
               href="/about-us"
               className="text-white/80 text-sm md:text-base hover:text-white transition-colors"
@@ -38,10 +45,9 @@ const Footer = () => {
             >
               Contact us
             </a>
-          </div>
+          </nav>
 
-          {/* Social Media Icons */}
-          <div className="flex gap-3">
+          <div className="flex justify-center lg:justify-end gap-3 shrink-0">
             <a
               href="#"
               className="w-12 h-12 bg-white/10 border border-white/10 rounded-full flex items-center justify-center hover:bg-white/15 transition-colors"
@@ -64,6 +70,10 @@ const Footer = () => {
               <FaLinkedin className="w-5 h-5 text-white" />
             </a>
           </div>
+        </div>
+
+        <div className="border-t border-white/10 pt-6 text-center text-white/60 text-xs sm:text-sm">
+          © 2026 Waitaa. All Rights Reserved
         </div>
       </div>
     </div>

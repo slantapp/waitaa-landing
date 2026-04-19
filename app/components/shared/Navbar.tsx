@@ -140,7 +140,7 @@ const Navbar = () => {
   return (
     <>
       <nav
-        className={`fixed top-6 right-0 z-50 transition-transform duration-500 w-[90%] lg:w-[65%] left-1/2 -translate-x-1/2  ${isVisible ? "translate-y-0" : "-translate-y-[150%]"
+        className={`fixed top-6 right-0 z-50 transition-transform duration-500 w-[90%] lg:w-[75%] left-1/2 -translate-x-1/2  ${isVisible ? "translate-y-0" : "-translate-y-[150%]"
           } z-50`}
       >
         <div
@@ -156,12 +156,13 @@ const Navbar = () => {
               {/* Logo */}
               <div className="flex items-center">
                 <Link href="/" className="flex items-center">
-                  <div className="w-10 lg:w-12 relative">
+                  <div className="w-24 lg:w-32 relative">
                     <Image
-                      src="/images/logo.png"
+                      src="/images/waita-text.png"
                       width={51}
                       height={35}
                       alt="logo"
+                      className="w-full h-full object-contain"
                     />
                   </div>
                 </Link>
@@ -323,7 +324,7 @@ const Navbar = () => {
           {/* Mobile Menu Header */}
           <div className="flex items-center justify-between p-6 border-b border-white/10">
             <div className="flex items-center">
-              <Image src="/images/logo.png" width={51} height={35} alt="logo" />
+              <Image src="/images/waita-text.png" width={90} height={65} alt="logo" />
             </div>
             <button
               onClick={() => setIsMobileMenuOpen(false)}

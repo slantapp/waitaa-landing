@@ -1,5 +1,11 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import {
+  OFFICES,
+  PHONE_DISPLAY,
+  PHONE_E164,
+  SUPPORT_EMAIL,
+} from "@/app/lib/contact";
 
 export const metadata: Metadata = {
   title: "Privacy policy",
@@ -101,8 +107,34 @@ export default function PrivacyPolicyPage() {
           <section>
             <h2 className="text-white text-xl font-semibold">8. Contact</h2>
             <p className="mt-3 text-white/70 leading-relaxed">
-              Questions about this policy? Reach us via the contact page.
+              Questions about this policy? Reach us via the contact page, or use
+              the details below.
             </p>
+            <ul className="mt-4 space-y-2 text-white/70 leading-relaxed">
+              <li>
+                Email:{" "}
+                <a
+                  href={`mailto:${SUPPORT_EMAIL}`}
+                  className="text-white underline underline-offset-2 hover:text-white/90"
+                >
+                  {SUPPORT_EMAIL}
+                </a>
+              </li>
+              <li>
+                Phone:{" "}
+                <a
+                  href={`tel:${PHONE_E164}`}
+                  className="text-white underline underline-offset-2 hover:text-white/90"
+                >
+                  {PHONE_DISPLAY}
+                </a>
+              </li>
+              {OFFICES.map((office) => (
+                <li key={office.city}>
+                  {office.city}: {office.address}
+                </li>
+              ))}
+            </ul>
             <div className="mt-4">
               <Link
                 href="/contact-us"

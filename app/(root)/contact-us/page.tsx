@@ -8,6 +8,12 @@ import {
   SelectValue,
 } from "@/app/components/ui/select";
 import PatternHero from "@/app/components/shared/PatternHero";
+import {
+  OFFICES,
+  PHONE_DISPLAY,
+  PHONE_E164,
+  SUPPORT_EMAIL,
+} from "@/app/lib/contact";
 
 export const metadata: Metadata = {
   title: "Contact us",
@@ -42,12 +48,22 @@ export default function ContactUsPage() {
             <div className="mt-10 space-y-7 text-white/80">
               <div>
                 <p className="text-white/60 text-sm mb-1">Email:</p>
-                <p className="font-medium text-white">support@waitaa.com</p>
+                <a
+                  href={`mailto:${SUPPORT_EMAIL}`}
+                  className="font-medium text-white hover:underline underline-offset-2"
+                >
+                  {SUPPORT_EMAIL}
+                </a>
               </div>
 
               <div>
-                <p className="text-white/60 text-sm mb-1">Phone Number:</p>
-                <p className="font-medium text-white">(123) 1221 2323</p>
+                <p className="text-white/60 text-sm mb-1">Phone:</p>
+                <a
+                  href={`tel:${PHONE_E164}`}
+                  className="font-medium text-white hover:underline underline-offset-2"
+                >
+                  {PHONE_DISPLAY}
+                </a>
               </div>
 
               <div>
@@ -58,23 +74,21 @@ export default function ContactUsPage() {
               </div>
 
               <div>
-                <p className="text-white/60 text-sm mb-1">Address:</p>
-                <p className="font-medium text-white">
-                  123 Innovation Avenue, London,
-                  <br />
-                  United Kingdom
-                </p>
+                <p className="text-white/60 text-sm mb-3">Offices:</p>
+                <ul className="list-none space-y-4 p-0 m-0">
+                  {OFFICES.map((office) => (
+                    <li key={office.city}>
+                      <p className="text-white/50 text-xs uppercase tracking-wide mb-1">
+                        {office.city}
+                      </p>
+                      <p className="font-medium text-white">{office.address}</p>
+                    </li>
+                  ))}
+                </ul>
               </div>
             </div>
 
             <div className="mt-10 flex items-center gap-4">
-              <a
-                href="#"
-                className="h-12 w-12 rounded-full bg-[var(--color-primary)] text-[var(--color-secondary)] flex items-center justify-center hover:opacity-90 transition-opacity"
-                aria-label="Facebook"
-              >
-                <Facebook className="h-5 w-5" />
-              </a>
               <a
                 href="#"
                 className="h-12 w-12 rounded-full bg-[var(--color-primary)] text-[var(--color-secondary)] flex items-center justify-center hover:opacity-90 transition-opacity"
