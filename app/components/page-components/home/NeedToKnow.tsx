@@ -124,9 +124,9 @@ const NeedToKnow = () => {
       </div>
 
       {/* email section  */}
-      <div className="w-full bg-[#233200] min-h-screen">
+      <div className="w-full bg-[#233200] ">
         <div className="">
-          <div className="grid grid-cols-1 lg:grid-cols-2 min-h-screen">
+          <div className="grid grid-cols-1 lg:grid-cols-2">
             {/* Left side - Image */}
             <div className="relative h-64 md:h-96 lg:h-full">
               <Image

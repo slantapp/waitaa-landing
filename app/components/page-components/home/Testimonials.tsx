@@ -3,46 +3,14 @@
 import Image from "next/image";
 import { ArrowLeft, ArrowRight } from "lucide-react";
 import { useState, useEffect } from "react";
+import testimonialsData from "@/app/data/testimonials.json";
+
+const testimonials = testimonialsData.testimonials;
 
 const Testimonials = () => {
   const [currentIndex, setCurrentIndex] = useState(1);
   const [isTransitioning, setIsTransitioning] = useState(true);
   const [perView, setPerView] = useState(1);
-
-  const testimonials = [
-    {
-      id: 1,
-      name: "Amelia Joseph",
-      title: "Chief Manager",
-      image: "/images/testimonials/img1.jpg",
-      text: "My vision came alive effortlessly. Their blend of casual and professional approach made the process a breeze. Creativity flowed, and the results were beyond my expectations.",
-      featured: true,
-    },
-    {
-      id: 2,
-      name: "Jacob Joshua",
-      title: "Chief Manager",
-      image: "/images/testimonials/img2.jpg",
-      text: "I found the digital expertise I needed. Their creative-professional balance exceeded expectations. Friendly interactions, exceptional outcomes. For digital enchantment, it's got to be Embrace!",
-      featured: false,
-    },
-    {
-      id: 3,
-      name: "Jacob Jo",
-      title: "Chief Manager",
-      image: "/images/testimonials/img3.jpg",
-      text: "Embrace really nails it! Creative style. They're the partners you want for strategy. Thrilled with what they delivered.",
-      featured: false,
-    },
-    {
-      id: 4,
-      name: "Godwin Asuquo",
-      title: "Chief Manager",
-      image: "/images/testimonials/img3.jpg",
-      text: "Embrace really nails it! Creative style. They're the partners you want for strategy. Thrilled with what they delivered.",
-      featured: false,
-    },
-  ];
 
   // Create infinite carousel array: [last, ...original, first]
   const infiniteTestimonials = [

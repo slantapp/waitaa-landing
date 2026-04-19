@@ -15,7 +15,7 @@ export default function PatternHero({
 }: PatternHeroProps) {
   return (
     <section className={className}>
-      <div className="relative w-full h-80 lg:h-[420px] overflow-hidden bg-[#0B0B0B]">
+      <div className="relative w-full h-96 lg:h-[420px] overflow-hidden bg-[#0B0B0B]">
         {/* Decorative patterns and icons */}
         <div className="pointer-events-none absolute inset-0">
           {/* Outer rings */}

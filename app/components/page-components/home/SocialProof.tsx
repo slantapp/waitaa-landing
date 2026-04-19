@@ -17,7 +17,6 @@ const SocialProof = () => {
 
   return (
     <section
-      id="products"
       className="min-h-screen bg-[#FFFFFF] w-[95%] rounded-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16 lg:py-20 mt-14 scroll-mt-28"
     >
       {/* Header Section */}

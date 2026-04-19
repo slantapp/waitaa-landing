@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { ArrowRight, CheckCircle, UtensilsCrossed, XCircle } from "lucide-react";
+import { CheckCircle, UtensilsCrossed, XCircle } from "lucide-react";
 import { useState } from "react";
 import pricingData from "@/app/data/pricing-plans.json";
 
@@ -107,8 +107,6 @@ const Pricing = () => {
                 Choose a plan and get onboard in minutes. Then get unlimited ads
                 {isYearly ? " for one year" : " for one month"}
               </p>
-
-              <ArrowRight className="w-8 h-8 mb-8" />
             </div>
 
             {/* Background Image */}
