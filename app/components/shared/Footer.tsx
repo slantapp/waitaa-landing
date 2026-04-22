@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { FaInstagram, FaTwitter, FaLinkedin } from "react-icons/fa";
+import { FaInstagram, FaLinkedin, FaTwitter } from "react-icons/fa";
 
 const Footer = () => {
   return (
@@ -49,25 +49,29 @@ const Footer = () => {
 
           <div className="flex justify-center lg:justify-end gap-3 shrink-0">
             <a
-              href="#"
-              className="w-12 h-12 bg-white/10 border border-white/10 rounded-full flex items-center justify-center hover:bg-white/15 transition-colors"
+              href="https://www.instagram.com/waitaa.qr"
+              target="_blank"
+              rel="noreferrer"
+              className="w-12 h-12 bg-white/10 border border-white/10 rounded-full flex items-center justify-center hover:bg-white/15 micro-lift micro-press"
               aria-label="Instagram"
             >
-              <FaInstagram className="w-5 h-5 text-white" />
+              <FaInstagram className="w-5 h-5 text-white float-soft-slower" />
             </a>
             <a
               href="#"
-              className="w-12 h-12 bg-white/10 border border-white/10 rounded-full flex items-center justify-center hover:bg-white/15 transition-colors"
+              className="w-12 h-12 bg-white/10 border border-white/10 rounded-full flex items-center justify-center hover:bg-white/15 micro-lift micro-press"
               aria-label="Twitter"
             >
-              <FaTwitter className="w-5 h-5 text-white" />
+              <FaTwitter className="w-5 h-5 text-white float-soft" />
             </a>
             <a
-              href="#"
-              className="w-12 h-12 bg-white/10 border border-white/10 rounded-full flex items-center justify-center hover:bg-white/15 transition-colors"
+              href="https://www.linkedin.com/company/waitaa"
+              target="_blank"
+              rel="noreferrer"
+              className="w-12 h-12 bg-white/10 border border-white/10 rounded-full flex items-center justify-center hover:bg-white/15 micro-lift micro-press"
               aria-label="LinkedIn"
             >
-              <FaLinkedin className="w-5 h-5 text-white" />
+              <FaLinkedin className="w-5 h-5 text-white float-soft-slower" />
             </a>
           </div>
         </div>

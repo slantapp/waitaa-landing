@@ -4,6 +4,7 @@ import Image from "next/image";
 import { ArrowLeft, ArrowRight } from "lucide-react";
 import { useState, useEffect } from "react";
 import testimonialsData from "@/app/data/testimonials.json";
+import { Reveal } from "@/app/components/motion/reveal";
 
 const testimonials = testimonialsData.testimonials;
 
@@ -72,12 +73,14 @@ const Testimonials = () => {
       <div className="max-w-7xl mx-auto px-4">
         {/* Header */}
         <div className="flex justify-between items-center mb-16">
-          <h2 className="text-[#233200] text-4xl md:text-5xl lg:text-6xl font-normal">
-            What Our Clients Say About Us
-          </h2>
+          <Reveal variant="fadeUp">
+            <h2 className="text-secondary text-4xl md:text-5xl lg:text-5xl xl:text-6xl font-normal">
+              What Our Clients Say About Us
+            </h2>
+          </Reveal>
 
           {/* Navigation Arrows */}
-          <div className="flex gap-4">
+          <Reveal className="flex gap-4" variant="fadeUp" delay={0.08}>
             <button
               onClick={prevTestimonial}
               className="w-16 h-16 rounded-full bg-gray-200 hover:bg-gray-300 flex items-center justify-center transition-colors"
@@ -86,15 +89,15 @@ const Testimonials = () => {
             </button>
             <button
               onClick={nextTestimonial}
-              className="w-16 h-16 rounded-full bg-[#8AC602] hover:bg-[var(--color-primary)]/90 flex items-center justify-center transition-colors"
+              className="w-16 h-16 rounded-full bg-[#8AC602] hover:bg-primary/90 flex items-center justify-center transition-colors"
             >
               <ArrowRight className="w-6 h-6 text-white" />
             </button>
-          </div>
+          </Reveal>
         </div>
 
         {/* Testimonials Carousel (moves one item at a time) */}
-        <div className="relative overflow-hidden">
+        <Reveal className="relative overflow-hidden" variant="fadeUp" amount={0.2}>
           <div
             className={`flex gap-6 ${isTransitioning ? "transition-transform duration-500 ease-in-out" : ""
               }`}
@@ -106,7 +109,7 @@ const Testimonials = () => {
               return (
                 <div
                   key={`card-${index}`}
-                  className="flex-shrink-0"
+                  className="shrink-0"
                   style={{ width: `${100 / perView}%` }}
                 >
                   <div className="rounded-3xl p-6 sm:p-8 shadow-sm h-full bg-[#F4F2EA]">
@@ -120,7 +123,7 @@ const Testimonials = () => {
                         />
                       </div>
                       <div>
-                        <h3 className="text-xl font-semibold text-[var(--color-secondary)]">
+                        <h3 className="text-xl font-semibold text-secondary">
                           {testimonial.name}
                         </h3>
                         <p className="font-semibold text-gray-500">
@@ -128,7 +131,7 @@ const Testimonials = () => {
                         </p>
                       </div>
                     </div>
-                    <p className="leading-relaxed text-[var(--color-secondary)]">
+                    <p className="leading-relaxed text-secondary">
                       {testimonial.text}
                     </p>
                   </div>
@@ -136,10 +139,10 @@ const Testimonials = () => {
               );
             })}
           </div>
-        </div>
+        </Reveal>
 
         {/* Dots Indicator */}
-        <div className="flex justify-center mt-8 gap-2">
+        <Reveal className="flex justify-center mt-8 gap-2" variant="fade" delay={0.06}>
           {testimonials.map((_, index) => (
             <button
               key={index}
@@ -148,7 +151,7 @@ const Testimonials = () => {
                 }`}
             />
           ))}
-        </div>
+        </Reveal>
       </div>
     </div>
   );

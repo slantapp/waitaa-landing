@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { Reveal } from "@/app/components/motion/reveal";
 import {
   OFFICES,
   PHONE_DISPLAY,
@@ -17,24 +18,38 @@ export default function TermsAndConditionsPage() {
   return (
     <div className="pt-28 pb-20">
       <div className="pointer-events-none fixed inset-0 -z-10 bg-[#0A0A0A]">
-        <div className="absolute -top-56 left-1/2 h-[720px] w-[720px] -translate-x-1/2 rounded-full bg-white/[0.06] blur-3xl" />
-        <div className="absolute -bottom-56 -right-40 h-[720px] w-[720px] rounded-full bg-white/[0.04] blur-3xl" />
+        <div className="absolute -top-56 left-1/2 h-[720px] w-[720px] -translate-x-1/2 rounded-full bg-white/6 blur-3xl" />
+        <div className="absolute -bottom-56 -right-40 h-[720px] w-[720px] rounded-full bg-white/4 blur-3xl" />
       </div>
 
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-        <header className="mb-10">
-          <p className="text-white/60 text-sm">Legal</p>
-          <h1 className="mt-2 text-white text-4xl md:text-5xl font-semibold">
-            Terms & Conditions
-          </h1>
-          <p className="mt-4 text-white/70 leading-relaxed">
-            These Terms govern your access to and use of Waitaa’s website and
-            services. By using Waitaa, you agree to these Terms.
-          </p>
-          <p className="mt-2 text-white/50 text-sm">Last updated: April 15, 2026</p>
+        <header className="mb-10 cursor-scan">
+          <Reveal variant="fadeUp">
+            <p className="text-white/60 text-sm">Legal</p>
+          </Reveal>
+          <Reveal variant="fadeUp" delay={0.06}>
+            <h1 className="mt-2 text-white text-4xl md:text-5xl font-semibold">
+              Terms & Conditions
+            </h1>
+          </Reveal>
+          <Reveal variant="fadeUp" delay={0.12}>
+            <p className="mt-4 text-white/70 leading-relaxed">
+              These Terms govern your access to and use of Waitaa’s website and
+              services. By using Waitaa, you agree to these Terms.
+            </p>
+          </Reveal>
+          <Reveal variant="fadeUp" delay={0.16}>
+            <p className="mt-2 text-white/50 text-sm">
+              Last updated: April 15, 2026
+            </p>
+          </Reveal>
         </header>
 
-        <div className="rounded-3xl bg-[#0B0B0B] shadow-[0_0_0_1px_rgba(255,255,255,0.06)] p-7 sm:p-10 space-y-10">
+        <Reveal
+          className="rounded-3xl bg-[#0B0B0B] shadow-[0_0_0_1px_rgba(255,255,255,0.06)] p-7 sm:p-10 space-y-10 card-interactive"
+          variant="fadeUp"
+          amount={0.2}
+        >
           <section>
             <h2 className="text-white text-xl font-semibold">1. About Waitaa</h2>
             <p className="mt-3 text-white/70 leading-relaxed">
@@ -132,7 +147,7 @@ export default function TermsAndConditionsPage() {
                 Email:{" "}
                 <a
                   href={`mailto:${SUPPORT_EMAIL}`}
-                  className="text-white underline underline-offset-2 hover:text-white/90"
+                  className="text-white underline underline-offset-2 hover:text-white/90 link-underline"
                 >
                   {SUPPORT_EMAIL}
                 </a>
@@ -141,7 +156,7 @@ export default function TermsAndConditionsPage() {
                 Phone:{" "}
                 <a
                   href={`tel:${PHONE_E164}`}
-                  className="text-white underline underline-offset-2 hover:text-white/90"
+                  className="text-white underline underline-offset-2 hover:text-white/90 link-underline"
                 >
                   {PHONE_DISPLAY}
                 </a>
@@ -155,13 +170,13 @@ export default function TermsAndConditionsPage() {
             <div className="mt-4">
               <Link
                 href="/contact-us"
-                className="inline-flex items-center justify-center h-12 px-7 rounded-full bg-[var(--color-primary)] text-[var(--color-secondary)] font-semibold hover:opacity-90 transition-opacity"
+                className="inline-flex items-center justify-center h-12 px-7 rounded-full bg-primary text-secondary font-semibold hover:bg-primary/90 micro-lift micro-press soft-glow"
               >
                 Contact us
               </Link>
             </div>
           </section>
-        </div>
+        </Reveal>
       </div>
     </div>
   );

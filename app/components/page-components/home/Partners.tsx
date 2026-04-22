@@ -1,6 +1,7 @@
 "use client"
 
 import Image from "next/image";
+import { Reveal } from "@/app/components/motion/reveal";
 
 const logos = [
   "/images/logos/forbes.png",
@@ -16,17 +17,19 @@ const Partners = () => {
 
   return (
     <section className="overflow-hidden ">
-      <p className="uppercase text-center mt-20 font-medium text-sm sm:text-base">
-        Trusted by modern businesses using Waitaa
-      </p>
+      <Reveal variant="fadeUp">
+        <p className="uppercase text-center mt-20 font-medium text-sm sm:text-base">
+          Trusted by modern businesses using Waitaa
+        </p>
+      </Reveal>
 
       {/* Container for scrolling logos */}
-      <div className="mt-10 relative">
+      <Reveal className="mt-10 relative" variant="fade" delay={0.05}>
         <div className="flex animate-scroll space-x-8 sm:space-x-12 lg:space-x-16">
           {duplicatedLogos.map((logo, index) => (
             <div
               key={index}
-              className="relative w-24 h-8 sm:w-28 sm:h-10 lg:w-32 lg:h-12 flex-shrink-0"
+              className="relative w-24 h-8 sm:w-28 sm:h-10 lg:w-32 lg:h-12 shrink-0"
             >
               <Image
                 src={logo}
@@ -37,7 +40,7 @@ const Partners = () => {
             </div>
           ))}
         </div>
-      </div>
+      </Reveal>
 
       <style jsx>{`
         @keyframes scroll {

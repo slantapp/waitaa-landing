@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
-import { Facebook, Instagram, Linkedin, X } from "lucide-react";
+import { Instagram, Linkedin, X } from "lucide-react";
+import { Reveal } from "@/app/components/motion/reveal";
+import { Stagger, StaggerItem } from "@/app/components/motion/stagger";
 import {
   Select,
   SelectContent,
@@ -25,8 +27,8 @@ export default function ContactUsPage() {
   return (
     <div className="pt-0 pb-20">
       <div className="pointer-events-none fixed inset-0 -z-10 bg-[#0A0A0A]">
-        <div className="absolute -top-40 left-1/2 h-[520px] w-[520px] -translate-x-1/2 rounded-full bg-white/[0.06] blur-3xl" />
-        <div className="absolute -bottom-48 -left-40 h-[520px] w-[520px] rounded-full bg-white/[0.04] blur-3xl" />
+        <div className="absolute -top-40 left-1/2 h-[520px] w-[520px] -translate-x-1/2 rounded-full bg-white/6 blur-3xl" />
+        <div className="absolute -bottom-48 -left-40 h-[520px] w-[520px] rounded-full bg-white/4 blur-3xl" />
       </div>
 
       <PatternHero
@@ -38,83 +40,102 @@ export default function ContactUsPage() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-14 items-start">
           {/* Left: contact details */}
           <section className="pt-6 lg:pt-14">
-            <h1 className="text-white text-4xl md:text-5xl font-normal">
-              Get in Touch
-            </h1>
-            <p className="mt-6 text-white/70 max-w-md leading-relaxed">
-              Join our newsletter to stay upto date on features and realeases.
-            </p>
+            <Reveal variant="fadeUp">
+              <h1 className="text-white text-4xl md:text-5xl font-normal">
+                Get in Touch
+              </h1>
+            </Reveal>
+            <Reveal variant="fadeUp" delay={0.08}>
+              <p className="mt-6 text-white/70 max-w-md leading-relaxed">
+                Join our newsletter to stay upto date on features and realeases.
+              </p>
+            </Reveal>
 
-            <div className="mt-10 space-y-7 text-white/80">
-              <div>
-                <p className="text-white/60 text-sm mb-1">Email:</p>
-                <a
-                  href={`mailto:${SUPPORT_EMAIL}`}
-                  className="font-medium text-white hover:underline underline-offset-2"
-                >
-                  {SUPPORT_EMAIL}
-                </a>
-              </div>
+            <Stagger className="mt-10 space-y-7 text-white/80" amount={0.2}>
+              <StaggerItem>
+                <div className="card-interactive rounded-2xl border border-white/10 bg-white/5 p-5">
+                  <p className="text-white/60 text-sm mb-1">Email:</p>
+                  <a
+                    href={`mailto:${SUPPORT_EMAIL}`}
+                    className="font-medium text-white hover:underline underline-offset-2 link-underline"
+                  >
+                    {SUPPORT_EMAIL}
+                  </a>
+                </div>
+              </StaggerItem>
 
-              <div>
-                <p className="text-white/60 text-sm mb-1">Phone:</p>
-                <a
-                  href={`tel:${PHONE_E164}`}
-                  className="font-medium text-white hover:underline underline-offset-2"
-                >
-                  {PHONE_DISPLAY}
-                </a>
-              </div>
+              <StaggerItem>
+                <div className="card-interactive rounded-2xl border border-white/10 bg-white/5 p-5">
+                  <p className="text-white/60 text-sm mb-1">Phone:</p>
+                  <a
+                    href={`tel:${PHONE_E164}`}
+                    className="font-medium text-white hover:underline underline-offset-2 link-underline"
+                  >
+                    {PHONE_DISPLAY}
+                  </a>
+                </div>
+              </StaggerItem>
 
-              <div>
-                <p className="text-white/60 text-sm mb-1">Assistance hours:</p>
-                <p className="font-medium text-white">
-                  Monday through Friday, 6 a.m. to 8 p.m. EST
-                </p>
-              </div>
+              <StaggerItem>
+                <div className="card-interactive rounded-2xl border border-white/10 bg-white/5 p-5">
+                  <p className="text-white/60 text-sm mb-1">Assistance hours:</p>
+                  <p className="font-medium text-white">
+                    Monday through Friday, 6 a.m. to 8 p.m. EST
+                  </p>
+                </div>
+              </StaggerItem>
 
-              <div>
-                <p className="text-white/60 text-sm mb-3">Offices:</p>
-                <ul className="list-none space-y-4 p-0 m-0">
-                  {OFFICES.map((office) => (
-                    <li key={office.city}>
-                      <p className="text-white/50 text-xs uppercase tracking-wide mb-1">
-                        {office.city}
-                      </p>
-                      <p className="font-medium text-white">{office.address}</p>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            </div>
+              <StaggerItem>
+                <div className="card-interactive rounded-2xl border border-white/10 bg-white/5 p-5">
+                  <p className="text-white/60 text-sm mb-3">Offices:</p>
+                  <ul className="list-none space-y-4 p-0 m-0">
+                    {OFFICES.map((office) => (
+                      <li key={office.city}>
+                        <p className="text-white/50 text-xs uppercase tracking-wide mb-1">
+                          {office.city}
+                        </p>
+                        <p className="font-medium text-white">{office.address}</p>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </StaggerItem>
+            </Stagger>
 
-            <div className="mt-10 flex items-center gap-4">
+            <Reveal className="mt-10 flex items-center gap-4" variant="fadeUp" delay={0.06}>
               <a
-                href="#"
-                className="h-12 w-12 rounded-full bg-[var(--color-primary)] text-[var(--color-secondary)] flex items-center justify-center hover:opacity-90 transition-opacity"
+                href="https://www.linkedin.com/company/waitaa"
+                target="_blank"
+                rel="noreferrer"
+                className="h-12 w-12 rounded-full bg-primary text-secondary flex items-center justify-center hover:bg-primary/90 micro-lift micro-press soft-glow"
                 aria-label="LinkedIn"
               >
-                <Linkedin className="h-5 w-5" />
+                <Linkedin className="h-5 w-5 float-soft-slower" />
               </a>
               <a
                 href="#"
-                className="h-12 w-12 rounded-full bg-[var(--color-primary)] text-[var(--color-secondary)] flex items-center justify-center hover:opacity-90 transition-opacity"
+                className="h-12 w-12 rounded-full bg-primary text-secondary flex items-center justify-center hover:bg-primary/90 micro-lift micro-press soft-glow"
                 aria-label="X"
               >
-                <X className="h-5 w-5" />
+                <X className="h-5 w-5 float-soft" />
               </a>
               <a
-                href="#"
-                className="h-12 w-12 rounded-full bg-[var(--color-primary)] text-[var(--color-secondary)] flex items-center justify-center hover:opacity-90 transition-opacity"
+                href="https://www.instagram.com/waitaa.qr"
+                target="_blank"
+                rel="noreferrer"
+                className="h-12 w-12 rounded-full bg-primary text-secondary flex items-center justify-center hover:bg-primary/90 micro-lift micro-press soft-glow"
                 aria-label="Instagram"
               >
-                <Instagram className="h-5 w-5" />
+                <Instagram className="h-5 w-5 float-soft-slower" />
               </a>
-            </div>
+            </Reveal>
           </section>
 
           {/* Right: form card */}
-          <section className="bg-[#0B0B0B] rounded-3xl p-6 sm:p-8 lg:p-10 shadow-[0_0_0_1px_rgba(255,255,255,0.06)]">
+          <Reveal
+            className="bg-[#0B0B0B] rounded-3xl p-6 sm:p-8 lg:p-10 shadow-[0_0_0_1px_rgba(255,255,255,0.06)] card-interactive"
+            variant="fadeLeft"
+          >
             <h2 className="text-white text-2xl font-semibold">Your Details</h2>
             <p className="mt-3 text-white/60 text-sm leading-relaxed max-w-lg">
               You're moments away from accessing one of Africa's most trusted
@@ -130,7 +151,7 @@ export default function ContactUsPage() {
                   </label>
                   <input
                     placeholder="First Name"
-                    className="w-full h-12 rounded-full bg-black/30 border border-white/10 px-4 text-white placeholder:text-white/30 focus:outline-none focus:border-white/20"
+                    className="w-full h-12 rounded-full bg-black/30 border border-white/10 px-4 text-white placeholder:text-white/30 focus:outline-none focus:border-white/20 micro-lift"
                   />
                 </div>
                 <div>
@@ -139,7 +160,7 @@ export default function ContactUsPage() {
                   </label>
                   <input
                     placeholder="Last Name"
-                    className="w-full h-12 rounded-full bg-black/30 border border-white/10 px-4 text-white placeholder:text-white/30 focus:outline-none focus:border-white/20"
+                    className="w-full h-12 rounded-full bg-black/30 border border-white/10 px-4 text-white placeholder:text-white/30 focus:outline-none focus:border-white/20 micro-lift"
                   />
                 </div>
               </div>
@@ -150,7 +171,7 @@ export default function ContactUsPage() {
                 </label>
                 <input
                   placeholder="Name of Restaurant"
-                  className="w-full h-12 rounded-full bg-black/30 border border-white/10 px-4 text-white placeholder:text-white/30 focus:outline-none focus:border-white/20"
+                  className="w-full h-12 rounded-full bg-black/30 border border-white/10 px-4 text-white placeholder:text-white/30 focus:outline-none focus:border-white/20 micro-lift"
                 />
               </div>
 
@@ -161,7 +182,7 @@ export default function ContactUsPage() {
                 <input
                   placeholder="Email"
                   type="email"
-                  className="w-full h-12 rounded-full bg-black/30 border border-white/10 px-4 text-white placeholder:text-white/30 focus:outline-none focus:border-white/20"
+                  className="w-full h-12 rounded-full bg-black/30 border border-white/10 px-4 text-white placeholder:text-white/30 focus:outline-none focus:border-white/20 micro-lift"
                 />
               </div>
 
@@ -220,19 +241,19 @@ export default function ContactUsPage() {
                   </div>
                   <input
                     placeholder="Phone Number"
-                    className="flex-1 h-12 rounded-full bg-black/30 border border-white/10 px-4 text-white placeholder:text-white/30 focus:outline-none focus:border-white/20"
+                    className="flex-1 h-12 rounded-full bg-black/30 border border-white/10 px-4 text-white placeholder:text-white/30 focus:outline-none focus:border-white/20 micro-lift"
                   />
                 </div>
               </div>
 
               <button
                 type="button"
-                className="w-full h-12 rounded-full bg-[var(--color-primary)] text-[var(--color-secondary)] font-semibold hover:opacity-90 transition-opacity"
+                className="w-full h-12 rounded-full bg-primary text-secondary font-semibold hover:bg-primary/90 micro-lift micro-press soft-glow"
               >
                 Submit
               </button>
             </form>
-          </section>
+          </Reveal>
         </div>
       </div>
     </div>

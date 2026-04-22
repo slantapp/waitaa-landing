@@ -1,4 +1,5 @@
 import { ArrowRight } from "lucide-react";
+import { Reveal } from "@/app/components/motion/reveal";
 
 import type { SignupLink } from "./types";
 
@@ -9,8 +10,12 @@ type Props = {
 
 export default function ClosingCta({ ringa, menu }: Props) {
   return (
-    <section className="mt-14">
-      <div className="rounded-3xl bg-gradient-to-r from-white/10 to-white/5 border border-white/10 p-8 sm:p-10 flex flex-col lg:flex-row items-start lg:items-center justify-between gap-6">
+    <section className="mt-14 cursor-scan">
+      <Reveal
+        className="rounded-3xl bg-linear-to-r from-white/10 to-white/5 border border-white/10 p-8 sm:p-10 flex flex-col lg:flex-row items-start lg:items-center justify-between gap-6 card-interactive"
+        variant="fadeUp"
+        amount={0.2}
+      >
         <div>
           <h3 className="text-white text-2xl sm:text-3xl font-semibold">
             Upgrade Your Customer Experience Today
@@ -26,7 +31,7 @@ export default function ClosingCta({ ringa, menu }: Props) {
             href={ringa.url}
             // target="_blank"
             rel="noreferrer"
-            className="inline-flex items-center justify-center h-12 px-7 rounded-full font-semibold transition-opacity bg-[var(--color-primary)] text-[var(--color-secondary)] hover:opacity-90"
+            className="inline-flex items-center justify-center h-12 px-7 rounded-full font-semibold bg-primary text-secondary hover:bg-primary/90 micro-lift micro-press soft-glow"
           >
             Start with Ringa
             <ArrowRight className="ml-2 h-4 w-4" />
@@ -35,14 +40,14 @@ export default function ClosingCta({ ringa, menu }: Props) {
             href={menu.url}
             // target="_blank"
             rel="noreferrer"
-            className="inline-flex items-center justify-center h-12 px-7 rounded-full font-semibold transition-colors bg-white/10 border border-white/10 text-white hover:bg-white/15"
+            className="inline-flex items-center justify-center h-12 px-7 rounded-full font-semibold bg-white/10 border border-white/10 text-white hover:bg-white/15 micro-lift micro-press"
           >
             Start with Menu
             <ArrowRight className="ml-2 h-4 w-4" />
           </a>
 
         </div>
-      </div>
+      </Reveal>
     </section>
   );
 }

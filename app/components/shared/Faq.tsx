@@ -2,6 +2,8 @@
 
 import { ChevronDown } from "lucide-react";
 import { useState } from "react";
+import { Reveal } from "@/app/components/motion/reveal";
+import { Stagger, StaggerItem } from "@/app/components/motion/stagger";
 
 const Faq = () => {
   const [openIndex, setOpenIndex] = useState(null);
@@ -49,47 +51,52 @@ const Faq = () => {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-center">
           {/* Left Side - Header */}
           <div>
-            <p className="text-[#596CF2] text-lg mb-4 font-medium">FAQs</p>
-            <h2 className="text-[#233200] text-4xl md:text-5xl lg:text-6xl font-normal mb-6">
-              Frequently Asked Questions
-            </h2>
-            <p className="text-gray-600 text-lg md:text-xl">
-              Your questions, answered.
-            </p>
+            <Reveal variant="fadeUp">
+              <p className="text-[#596CF2] text-lg mb-4 font-medium">FAQs</p>
+            </Reveal>
+            <Reveal variant="fadeUp" delay={0.06}>
+              <h2 className="text-secondary text-4xl md:text-5xl lg:text-6xl font-normal mb-6">
+                Frequently Asked Questions
+              </h2>
+            </Reveal>
+            <Reveal variant="fadeUp" delay={0.1}>
+              <p className="text-gray-600 text-lg md:text-xl">
+                Your questions, answered.
+              </p>
+            </Reveal>
           </div>
 
           {/* Right Side - FAQ Items */}
-          <div className="space-y-4">
+          <Stagger className="space-y-4" amount={0.2}>
             {faqs.map((faq, index) => (
-              <div
-                key={index}
-                className="bg-[#FFFFFF] hover:bg-[#f4f4ee] rounded-lg overflow-hidden"
-              >
-                <button
-                  onClick={() => toggleAccordion(index)}
-                  className="w-full px-6 py-5 text-left flex justify-between items-center  transition-colors"
-                >
-                  <span className="text-[#233200] text-lg font-medium pr-4">
-                    {faq.question}
-                  </span>
-                  <ChevronDown
-                    className={`w-5 h-5 text-gray-400 transition-transform duration-200 flex-shrink-0 ${openIndex === index ? "rotate-180" : ""
-                      }`}
-                  />
-                </button>
+              <StaggerItem key={index}>
+                <div className="bg-[#FFFFFF] hover:bg-[#f4f4ee] rounded-lg overflow-hidden">
+                  <button
+                    onClick={() => toggleAccordion(index)}
+                    className="w-full px-6 py-5 text-left flex justify-between items-center  transition-colors"
+                  >
+                    <span className="text-secondary text-lg font-medium pr-4">
+                      {faq.question}
+                    </span>
+                    <ChevronDown
+                      className={`w-5 h-5 text-gray-400 transition-transform duration-200 shrink-0 ${openIndex === index ? "rotate-180" : ""
+                        }`}
+                    />
+                  </button>
 
-                {openIndex === index && (
-                  <div className="px-6 pb-5">
-                    <div className="border-t border-gray-100 pt-4">
-                      <p className="text-gray-600 leading-relaxed">
-                        {faq.answer}
-                      </p>
+                  {openIndex === index && (
+                    <div className="px-6 pb-5">
+                      <div className="border-t border-gray-100 pt-4">
+                        <p className="text-gray-600 leading-relaxed">
+                          {faq.answer}
+                        </p>
+                      </div>
                     </div>
-                  </div>
-                )}
-              </div>
+                  )}
+                </div>
+              </StaggerItem>
             ))}
-          </div>
+          </Stagger>
         </div>
       </div>
     </div>

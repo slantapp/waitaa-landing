@@ -140,7 +140,7 @@ const Navbar = () => {
   return (
     <>
       <nav
-        className={`fixed top-6 right-0 z-50 transition-transform duration-500 w-[90%] lg:w-[75%] left-1/2 -translate-x-1/2  ${isVisible ? "translate-y-0" : "-translate-y-[150%]"
+        className={`fixed top-6 right-0 z-50 transition-transform duration-500 max-w-7xl mx-auto w-[90%] lg:w-[75%] left-1/2 -translate-x-1/2  ${isVisible ? "translate-y-0" : "-translate-y-[150%]"
           } z-50`}
       >
         <div
@@ -158,7 +158,7 @@ const Navbar = () => {
                 <Link href="/" className="flex items-center">
                   <div className="w-24 lg:w-32 relative">
                     <Image
-                      src="/images/waita-text.png"
+                      src="/images/waita-text.svg"
                       width={51}
                       height={35}
                       alt="logo"
@@ -174,7 +174,7 @@ const Navbar = () => {
                   type="button"
                   onClick={() => scrollToSection("home")}
                   className={`text-base font-medium transition-colors ${isHomeActive
-                    ? "text-[var(--color-primary)]"
+                    ? "text-primary"
                     : "text-white/90 hover:text-white"
                     } cursor-pointer`}
                 >
@@ -185,7 +185,7 @@ const Navbar = () => {
                   type="button"
                   onClick={() => scrollToSection("why-waitaa")}
                   className={`text-base font-medium transition-colors ${isWhyWaitaaActive
-                    ? "text-[var(--color-primary)]"
+                    ? "text-primary"
                     : "text-white/90 hover:text-white"
                     } cursor-pointer`}
                 >
@@ -202,7 +202,7 @@ const Navbar = () => {
                     type="button"
                     onClick={() => setIsProductsOpen((v) => !v)}
                     className={`flex items-center text-base font-medium transition-colors group ${isProductsActive
-                      ? "text-[var(--color-primary)]"
+                      ? "text-primary"
                       : "text-white/90 hover:text-white"
                       } cursor-pointer`}
                     aria-haspopup="menu"
@@ -244,7 +244,7 @@ const Navbar = () => {
                   type="button"
                   onClick={() => scrollToSection("features")}
                   className={`text-base font-medium transition-colors ${isFeaturesActive
-                    ? "text-[var(--color-primary)]"
+                    ? "text-primary"
                     : "text-white/90 hover:text-white"
                     } cursor-pointer`}
                 >
@@ -254,7 +254,7 @@ const Navbar = () => {
                 <Link
                   href="/about-us"
                   className={`text-base font-medium transition-colors ${isAboutPage
-                    ? "text-[var(--color-primary)]"
+                    ? "text-primary"
                     : "text-white/90 hover:text-white"
                     } cursor-pointer`}
                 >
@@ -264,7 +264,7 @@ const Navbar = () => {
                 <Link
                   href="/contact-us"
                   className={`text-base font-medium transition-colors ${isContactPage
-                    ? "text-[var(--color-primary)]"
+                    ? "text-primary"
                     : "text-white/90 hover:text-white"
                     } cursor-pointer`}
                 >
@@ -276,7 +276,7 @@ const Navbar = () => {
               <div className="hidden md:flex items-center space-x-4">
                 <Link
                   href="/get-started"
-                  className="px-6 py-2.5 bg-primary text-secondary rounded-full text-base font-semibold hover:bg-[var(--color-primary)]/90 transition-colors"
+                  className="px-6 py-2.5 bg-primary text-secondary rounded-full text-base font-semibold hover:bg-primary/90 micro-lift micro-press soft-glow"
                 >
                   Get Started
                 </Link>
@@ -324,7 +324,7 @@ const Navbar = () => {
           {/* Mobile Menu Header */}
           <div className="flex items-center justify-between p-6 border-b border-white/10">
             <div className="flex items-center">
-              <Image src="/images/waita-text.png" width={90} height={65} alt="logo" />
+              <Image src="/images/waita-text.svg" width={90} height={65} alt="logo" />
             </div>
             <button
               onClick={() => setIsMobileMenuOpen(false)}
@@ -339,7 +339,7 @@ const Navbar = () => {
             <button
               type="button"
               className={`block w-full text-left text-lg font-medium transition-colors ${isHomeActive
-                ? "text-[var(--color-primary)]"
+                ? "text-primary"
                 : "text-white/90 hover:text-white"
                 } cursor-pointer`}
               onClick={() => {
@@ -353,7 +353,7 @@ const Navbar = () => {
             <button
               type="button"
               className={`block w-full text-left text-lg font-medium transition-colors ${isWhyWaitaaActive
-                ? "text-[var(--color-primary)]"
+                ? "text-primary"
                 : "text-white/90 hover:text-white"
                 } cursor-pointer`}
               onClick={() => {
@@ -367,7 +367,7 @@ const Navbar = () => {
             <button
               type="button"
               className={`block w-full text-left text-lg font-medium transition-colors ${isFeaturesActive
-                ? "text-[var(--color-primary)]"
+                ? "text-primary"
                 : "text-white/90 hover:text-white"
                 } cursor-pointer`}
               onClick={() => {
@@ -381,7 +381,7 @@ const Navbar = () => {
             <Link
               href="/about-us"
               className={`block text-lg font-medium transition-colors ${isAboutPage
-                ? "text-[var(--color-primary)]"
+                ? "text-primary"
                 : "text-white/90 hover:text-white"
                 }`}
               onClick={() => setIsMobileMenuOpen(false)}
@@ -393,7 +393,7 @@ const Navbar = () => {
               type="button"
               onClick={() => setIsMobileProductsOpen((v) => !v)}
               className={`w-full text-left text-lg font-medium flex items-center justify-between transition-colors ${isProductsActive
-                ? "text-[var(--color-primary)]"
+                ? "text-primary"
                 : "text-white/90 hover:text-white"
                 } cursor-pointer`}
               aria-expanded={isMobileProductsOpen}
@@ -435,7 +435,7 @@ const Navbar = () => {
             <Link
               href="/contact-us"
               className={`block text-lg font-medium transition-colors ${isContactPage
-                ? "text-[var(--color-primary)]"
+                ? "text-primary"
                 : "text-white/90 hover:text-white"
                 }`}
               onClick={() => setIsMobileMenuOpen(false)}
@@ -448,7 +448,7 @@ const Navbar = () => {
           <div className="p-6 border-t border-white/10">
             <Link
               href="/get-started"
-              className="block w-full px-6 py-3 bg-[var(--color-primary)] text-[var(--color-secondary)] rounded-full text-base font-semibold text-center hover:bg-[var(--color-primary)]/90 transition-colors"
+              className="block w-full px-6 py-3 bg-primary text-secondary rounded-full text-base font-semibold text-center hover:bg-primary/90 micro-lift micro-press soft-glow"
               onClick={() => setIsMobileMenuOpen(false)}
             >
               Get Started

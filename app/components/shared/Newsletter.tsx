@@ -3,6 +3,7 @@
 import Image from "next/image";
 import { useState } from "react";
 import Link from "next/link";
+import { Reveal } from "@/app/components/motion/reveal";
 
 const Newsletter = () => {
   const [email, setEmail] = useState("");
@@ -15,7 +16,11 @@ const Newsletter = () => {
 
   return (
     <div className="max-w-7xl mx-auto py-16 px-4">
-      <div className="rounded-3xl lg:rounded-[3rem] px-2 py-8 md:p-12 lg:p-16 relative overflow-hidden">
+      <Reveal
+        className="rounded-3xl lg:rounded-[3rem] px-2 py-8 md:p-12 lg:p-16 relative overflow-hidden"
+        variant="fadeUp"
+        amount={0.2}
+      >
         <Image
           src="/images/peopleEating.png"
           alt="Restaurant dining scene"
@@ -23,20 +28,24 @@ const Newsletter = () => {
           className="object-cover"
         />
         {/*Overlay */}
-        <div className="absolute inset-0 bg-[#233200]/85"></div>
+        <div className="absolute inset-0 bg-secondary/85"></div>
 
         <div className="relative z-10">
           {/* Header */}
           <div className="text-center lg:text-left">
-            <h2 className="text-white text-3xl md:text-4xl lg:text-5xl lg:w-1/2 font-normal mb-6 leading-tight max-w-4xl lg:mx-0 mx-auto">
-              Scan a QR code and use Waitaa in your browser.
-            </h2>
-            <p className="text-white/80 text-lg md:text-xl mb-8 max-w-2xl lg:mx-0 mx-auto">
-              Join our newsletter to stay up to date on features and releases.
-            </p>
+            <Reveal variant="fadeUp">
+              <h2 className="text-white text-3xl md:text-4xl lg:text-5xl lg:w-1/2 font-normal mb-6 leading-tight max-w-4xl lg:mx-0 mx-auto">
+                Scan a QR code and use Waitaa in your browser.
+              </h2>
+            </Reveal>
+            <Reveal variant="fadeUp" delay={0.08}>
+              <p className="text-white/80 text-lg md:text-xl mb-8 max-w-2xl lg:mx-0 mx-auto">
+                Join our newsletter to stay up to date on features and releases.
+              </p>
+            </Reveal>
 
             {/* Email Signup */}
-            <div className="relative max-w-md lg:mx-0 mx-auto mb-12">
+            <Reveal className="relative max-w-md lg:mx-0 mx-auto mb-12" delay={0.12}>
               <input
                 type="email"
                 placeholder="Enter your email"
@@ -46,24 +55,27 @@ const Newsletter = () => {
               />
               <button
                 onClick={handleSubmit}
-                className="absolute right-2 top-2 bottom-2 px-8  text-center bg-[var(--color-primary)] text-[var(--color-secondary)] rounded-full font-semibold hover:bg-[var(--color-primary)]/90 transition-colors whitespace-nowrap"
+                className="absolute right-2 top-2 bottom-2 px-8 text-center bg-primary text-secondary rounded-full font-semibold hover:bg-primary/90 micro-lift micro-press soft-glow whitespace-nowrap"
               >
                 Submit
               </button>
-            </div>
+            </Reveal>
 
             {/* CTA Buttons */}
-            <div className="flex flex-col sm:flex-row gap-4 lg:justify-start justify-center max-w-lg lg:mx-0 mx-auto">
+            <Reveal
+              className="flex flex-col sm:flex-row gap-4 lg:justify-start justify-center max-w-lg lg:mx-0 mx-auto"
+              delay={0.16}
+            >
               <Link
                 href="/get-started"
-                className="inline-flex items-center justify-center bg-[var(--color-primary)] text-[var(--color-secondary)] px-6 py-4 rounded-full font-semibold hover:bg-[var(--color-primary)]/90 transition-colors"
+                className="inline-flex items-center justify-center bg-primary text-secondary px-6 py-4 rounded-full font-semibold hover:bg-primary/90 micro-lift micro-press soft-glow"
               >
                 Scan & Get Started
               </Link>
-            </div>
+            </Reveal>
           </div>
         </div>
-      </div>
+      </Reveal>
     </div>
   );
 };
