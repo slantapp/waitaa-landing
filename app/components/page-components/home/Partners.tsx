@@ -4,11 +4,8 @@ import Image from "next/image";
 import { Reveal } from "@/app/components/motion/reveal";
 
 const logos = [
-  "/images/logos/forbes.png",
-  "/images/logos/cnbc.png",
-  "/images/logos/bloomberg.png",
-  "/images/logos/reuters.png",
-  "/images/logos/cnn.png",
+  "/images/logos/cue-bar.png",
+  "/images/logos/farm-city.png",
 ];
 
 const Partners = () => {
@@ -35,7 +32,7 @@ const Partners = () => {
                 src={logo}
                 alt={`logo ${(index % logos.length) + 1}`}
                 fill
-                className="object-contain filter grayscale hover:grayscale-0 transition-all duration-300"
+                className="object-contain filter grayscale hover:grayscale-0 transition-all duration-300 "
               />
             </div>
           ))}

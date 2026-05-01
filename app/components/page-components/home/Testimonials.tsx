@@ -113,22 +113,20 @@ const Testimonials = () => {
                   style={{ width: `${100 / perView}%` }}
                 >
                   <div className="rounded-3xl p-6 sm:p-8 shadow-sm h-full bg-[#F4F2EA]">
-                    <div className="flex items-center mb-6">
-                      <div className="relative w-16 h-16 rounded-full overflow-hidden mr-4">
+                    <div className="flex items-center gap-3 mb-6">
+                      <div className="relative w-11 h-11 sm:w-12 sm:h-12 shrink-0 rounded-full overflow-hidden ring-1 ring-black/10">
                         <Image
                           src={testimonial.image}
                           alt={testimonial.name}
                           fill
-                          className="object-cover"
+                          sizes="(min-width: 640px) 48px, 44px"
+                          className="object-cover object-top"
                         />
                       </div>
                       <div>
-                        <h3 className="text-xl font-semibold text-secondary">
+                        <h3 className="text-lg sm:text-xl font-semibold text-secondary">
                           {testimonial.name}
                         </h3>
-                        <p className="font-semibold text-gray-500">
-                          {testimonial.title}
-                        </p>
                       </div>
                     </div>
                     <p className="leading-relaxed text-secondary">

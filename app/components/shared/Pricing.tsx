@@ -2,7 +2,6 @@
 
 import Image from "next/image";
 import { CheckCircle, UtensilsCrossed, XCircle } from "lucide-react";
-import { useState } from "react";
 import pricingData from "@/app/data/pricing-plans.json";
 import { Reveal } from "@/app/components/motion/reveal";
 import { Stagger, StaggerItem } from "@/app/components/motion/stagger";
@@ -12,16 +11,13 @@ type PricingPlan = {
   key: string;
   name: string;
   rows: PlanRow[];
-  price: { monthly: number; yearly: number };
+  tokenGrant: number;
 };
 type PricingJson = {
   plans: PricingPlan[];
 };
 
 const Pricing = () => {
-  const [billingCycle, setBillingCycle] = useState("monthly");
-
-  const isYearly = billingCycle === "yearly";
   const data = pricingData as PricingJson;
   const { plans } = data;
   const smallPlan = plans.find((p) => p.key === "smallBusiness");
@@ -49,14 +45,8 @@ const Pricing = () => {
       ))}
     </>
   );
-  const formatNaira = (amount: number) => {
-    if (amount >= 1000 && amount % 1000 === 0) {
-      return `₦${amount / 1000}K`;
-    }
-    return `₦${new Intl.NumberFormat("en-NG", {
-      maximumFractionDigits: 0,
-    }).format(amount)}`;
-  };
+  const formatTokens = (amount: number) =>
+    new Intl.NumberFormat("en-NG").format(amount);
 
   return (
     <div className="w-full py-16 md:py-24 lg:py-32">
@@ -65,37 +55,14 @@ const Pricing = () => {
         <div className="text-center mb-12">
           <Reveal variant="fadeUp">
             <h2 className="text-secondary text-4xl md:text-5xl lg:text-6xl font-normal mb-4">
-              Simple, Transparent Pricing
+              Start with free tokens
             </h2>
           </Reveal>
           <Reveal variant="fadeUp" delay={0.08}>
             <p className="text-secondary text-lg md:text-xl mb-8">
-              No long-term contracts and no surprise fees.
+              Tokens power tasks on Waitaa. When you run out, you can buy more
+              tokens directly from your dashboard.
             </p>
-          </Reveal>
-
-          {/* Billing Toggle */}
-          <Reveal variant="fadeUp" delay={0.12}>
-            <div className="inline-flex bg-white rounded-full shadow-sm">
-              <button
-                onClick={() => setBillingCycle("monthly")}
-                className={`px-6 py-3 rounded-full text-sm font-medium transition-colors hover:cursor-pointer ${billingCycle === "monthly"
-                  ? "bg-[#689501] text-white"
-                  : "text-gray-600 hover:text-black"
-                  }`}
-              >
-                MONTHLY
-              </button>
-              <button
-                onClick={() => setBillingCycle("yearly")}
-                className={`px-6 py-3 rounded-full text-sm font-medium transition-colors hover:cursor-pointer ${billingCycle === "yearly"
-                  ? "bg-[#689501] text-white"
-                  : "text-gray-600 hover:text-black"
-                  }`}
-              >
-                YEARLY
-              </button>
-            </div>
           </Reveal>
         </div>
 
@@ -106,15 +73,15 @@ const Pricing = () => {
             <div className="bg-secondary h-[668px] rounded-3xl p-8 text-white relative overflow-hidden card-interactive">
               <div className="relative z-10">
                 <h3 className="text-2xl md:text-3xl font-normal mb-2">
-                  Save More
+                  Pay only when you need to
                 </h3>
                 <h3 className="text-2xl md:text-3xl font-bold mb-6">
-                  With Waitaa
+                  Top up anytime
                 </h3>
 
                 <p className="text-base md:text-lg font-light mb-8 leading-relaxed">
-                  Choose a plan and get onboard in minutes. Then get unlimited ads
-                  {isYearly ? " for one year" : " for one month"}
+                  We give you free tokens to start. When you exhaust your tokens,
+                  you can buy more from your dashboard and keep going.
                 </p>
               </div>
 
@@ -148,16 +115,10 @@ const Pricing = () => {
                 <div className="border-t-2 border-dotted border-gray-400 w-full"></div>
 
                 <div className="mb-8">
-                  <span className="text-4xl md:text-5xl font-bold text-secondary">
-                    {formatNaira(
-                      isYearly
-                        ? smallPlan?.price?.yearly ?? 0
-                        : smallPlan?.price?.monthly ?? 0
-                    )}
+                  <span className="text-3xl md:text-4xl font-bold text-secondary tracking-tight">
+                    {formatTokens(smallPlan?.tokenGrant ?? 0)}
                   </span>
-                  <span className="text-gray-500 ml-1">
-                    {isYearly ? "/yearly" : "/monthly"}
-                  </span>
+                  <span className="text-gray-500 ml-2 text-sm">free tokens</span>
                 </div>
               </div>
 
@@ -185,16 +146,10 @@ const Pricing = () => {
                 <div className="border-t-2 border-dotted border-gray-400 w-full"></div>
 
                 <div className="mb-8">
-                  <span className="text-4xl md:text-5xl font-bold text-secondary">
-                    {formatNaira(
-                      isYearly
-                        ? standardPlan?.price?.yearly ?? 0
-                        : standardPlan?.price?.monthly ?? 0
-                    )}
+                  <span className="text-3xl md:text-4xl font-bold text-secondary tracking-tight">
+                    {formatTokens(standardPlan?.tokenGrant ?? 0)}
                   </span>
-                  <span className="text-gray-500 ml-1">
-                    {isYearly ? "/yearly" : "/monthly"}
-                  </span>
+                  <span className="text-gray-500 ml-2 text-sm">free tokens</span>
                 </div>
               </div>
 

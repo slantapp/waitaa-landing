@@ -4,31 +4,27 @@
       "key": "smallBusiness",
       "name": "Small Business",
       "rows": [
-        { "label": "up to 10 tables/spots", "included": true },
-        { "label": "English + 1 local language", "included": true },
-        { "label": "Full revenue Allowance", "included": true },
-        { "label": "Priority support", "included": true },
-        { "label": "Custom branding", "included": false }
+        { "label": "Up to 10 QR codes", "included": true },
+        { "label": "Up to 10 waiters / staff", "included": true },
+        { "label": "Ads slot", "included": true },
+        { "label": "Ads revenue", "included": false },
+        { "label": "Smart TV control", "included": true },
+        { "label": "Multiple monitors screen", "included": true }
       ],
-      "price": {
-        "monthly": 10000,
-        "yearly": 100000
-      }
+      "tokenGrant": 10000
     },
     {
       "key": "standardRestaurant",
       "name": "Standard Restaurant",
       "rows": [
-        { "label": "Up to 30 tables", "included": true },
-        { "label": "All 4 Nigerian Languages", "included": true },
-        { "label": "Priority support", "included": true },
-        { "label": "Custom branding", "included": true },
-        { "label": "Peak hours analytics", "included": true }
+        { "label": "Up to 20 QR codes", "included": true },
+        { "label": "Up to 20 waiters / staff", "included": true },
+        { "label": "Ads slot", "included": true },
+        { "label": "Ads revenue", "included": true },
+        { "label": "Smart TV control", "included": true },
+        { "label": "Multiple monitors screen", "included": true }
       ],
-      "price": {
-        "monthly": 30000,
-        "yearly": 300000
-      }
+      "tokenGrant": 50000
     }
   ]
 }

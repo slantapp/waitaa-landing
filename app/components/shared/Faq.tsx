@@ -35,6 +35,11 @@ const Faq = () => {
         "Yes. Ringa includes an ads monetization system that can display campaigns after customers scan a QR code, with analytics like impressions and engagement. You can also run ads on an optional Ads Screen (TV/Android display).",
     },
     {
+      question: "What happens when my tokens finish?",
+      answer:
+        "When your tokens run out, actions that require tokens (for example creating or running certain ads and other token-based features in the dashboard) pause until you add more. You can top up anytime from your Waitaa dashboard using the Top up button to buy more tokens and continue without interrupting your operations.",
+    },
+    {
       question: "How do I talk to your team before signing up?",
       answer:
         "You can reach us via the Contact us page. We’ll help you decide between Ringa, Menu, or a combined setup and guide you through next steps for your business.",

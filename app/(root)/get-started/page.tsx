@@ -1,4 +1,6 @@
+
 import type { Metadata } from "next";
+import { headers } from "next/headers";
 
 import PatternHero from "@/app/components/shared/PatternHero";
 import GetStartedHero from "@/app/components/page-components/get-started/GetStartedHero";
@@ -13,9 +15,16 @@ export const metadata: Metadata = {
     "Choose Ringa for smart customer calling or Menu for QR ordering. Get started with Waitaa in minutes.",
 };
 
-export default function GetStartedPage() {
-  const ringaSignupUrl = '#';
-  const menuSignupUrl = '#';
+export default async function GetStartedPage() {
+  const headersList = await headers();
+  const host = headersList.get("host") ?? "waitaa.com";
+  const hostname = host.split(":")[0];
+  const domainParts = hostname.split(".").filter(Boolean);
+  const baseDomain =
+    domainParts.length >= 2 ? domainParts.slice(-2).join(".") : "waitaa.com";
+
+  const ringaSignupUrl = `https://ringa.${baseDomain}`;
+  const menuSignupUrl = `https://menu.${baseDomain}`;
 
   const ringaLink: SignupLink = {
     url: ringaSignupUrl,
@@ -30,8 +39,8 @@ export default function GetStartedPage() {
   return (
     <div className="pb-0 pt-0">
       <div className="pointer-events-none fixed inset-0 -z-10 bg-[#0A0A0A]">
-        <div className="absolute -top-56 left-1/2 h-[720px] w-[720px] -translate-x-1/2 rounded-full bg-white/[0.06] blur-3xl" />
-        <div className="absolute -bottom-56 -right-40 h-[720px] w-[720px] rounded-full bg-white/[0.04] blur-3xl" />
+        <div className="absolute -top-56 left-1/2 h-[720px] w-[720px] -translate-x-1/2 rounded-full bg-white/6 blur-3xl" />
+        <div className="absolute -bottom-56 -right-40 h-[720px] w-[720px] rounded-full bg-white/4 blur-3xl" />
       </div>
 
       {/* Full-bleed decorative intro section */}

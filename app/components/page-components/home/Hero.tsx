@@ -14,7 +14,7 @@ const HERO_USE_CASES = [
     sector: "Restaurants",
     title: "Turn every table into a faster, smarter checkout",
     subtitle:
-      "Let guests browse menus, request service, and pay from their phone—so you serve more tables with less friction.",
+      "Let guests browse menus, request service, and pay from their phone, so you serve more tables with less friction.",
   },
   {
     sector: "Clubs & Lounges",

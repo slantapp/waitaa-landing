@@ -52,7 +52,7 @@ export const metadata: Metadata = {
     locale: "en_US",
     images: [
       {
-        url: "/images/landingPageHero1.webp",
+        url: "https://s3-bucket.slantapp.io/public-assets/waitaa-bg-meta.jpg",
         width: 1200,
         height: 630,
         alt: "Waitaa: smart customer interaction for modern businesses",
@@ -63,7 +63,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title,
     description,
-    images: ["/images/landingPageHero1.webp"],
+    images: ["https://s3-bucket.slantapp.io/public-assets/waitaa-bg-meta.jpg"],
   },
   icons: {
     icon: "/favicon.png",
