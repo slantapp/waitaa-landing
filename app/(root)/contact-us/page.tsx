@@ -110,14 +110,14 @@ export default function ContactUsPage() {
                 className="h-12 w-12 rounded-full bg-primary text-secondary flex items-center justify-center hover:bg-primary/90 micro-lift micro-press soft-glow"
                 aria-label="LinkedIn"
               >
-                <Linkedin className="h-5 w-5 float-soft-slower" />
+                <Linkedin className="h-5 w-5" />
               </a>
               <a
                 href="#"
                 className="h-12 w-12 rounded-full bg-primary text-secondary flex items-center justify-center hover:bg-primary/90 micro-lift micro-press soft-glow"
                 aria-label="X"
               >
-                <X className="h-5 w-5 float-soft" />
+                <X className="h-5 w-5" />
               </a>
               <a
                 href="https://www.instagram.com/waitaa.qr"
@@ -126,7 +126,7 @@ export default function ContactUsPage() {
                 className="h-12 w-12 rounded-full bg-primary text-secondary flex items-center justify-center hover:bg-primary/90 micro-lift micro-press soft-glow"
                 aria-label="Instagram"
               >
-                <Instagram className="h-5 w-5 float-soft-slower" />
+                <Instagram className="h-5 w-5" />
               </a>
             </Reveal>
           </section>

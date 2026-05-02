@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 272 56" fill="none" role="img" aria-labelledby="junkyard-title">
+  <title id="junkyard-title">Junkyard</title>
+  <g transform="translate(136, 28)">
+    <text
+      text-anchor="middle"
+      dominant-baseline="central"
+      font-family="ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif"
+      font-size="26"
+      font-weight="800"
+      letter-spacing="0.07em"
+      fill="#111111"
+    >JUNKYARD</text>
+  </g>
+  <path
+    stroke="#111111"
+    stroke-width="2.2"
+    stroke-linecap="round"
+    d="M 48 44 H 224"
+  />
+</svg>

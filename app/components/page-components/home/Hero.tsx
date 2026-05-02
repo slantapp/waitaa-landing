@@ -3,11 +3,10 @@
 import { BellRing, Play, QrCode, X } from "lucide-react";
 import { useAutoAnimate } from "@formkit/auto-animate/react";
 import Link from "next/link";
-import { useCallback, useEffect, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
 
-/** Placeholder embed (short public clip). Replace with your Waitaa demo ID. */
-const DEMO_VIDEO_EMBED_ID = "M7lc1UVf-VE";
+const DEMO_VIDEO_SRC = "/video/waitaa_video.mp4";
 
 const HERO_USE_CASES = [
   {
@@ -38,6 +37,7 @@ const HERO_USE_CASES = [
 
 const Hero = () => {
   const [isDemoOpen, setIsDemoOpen] = useState(false);
+  const demoVideoRef = useRef<HTMLVideoElement>(null);
   const shouldReduceMotion = useReducedMotion();
   const [activeUseCaseIdx, setActiveUseCaseIdx] = useState(0);
   const [heroContent] = useAutoAnimate({
@@ -67,6 +67,13 @@ const Hero = () => {
       document.body.style.overflow = "";
     };
   }, [isDemoOpen, closeDemo]);
+
+  useEffect(() => {
+    if (!isDemoOpen) return;
+    const el = demoVideoRef.current;
+    if (!el) return;
+    el.play().catch(() => { });
+  }, [isDemoOpen]);
 
   const activeUseCase = HERO_USE_CASES[activeUseCaseIdx];
 
@@ -197,13 +204,17 @@ const Hero = () => {
               </button>
             </div>
             <div className="relative aspect-video w-full overflow-hidden rounded-xl bg-black">
-              <iframe
-                title="Waitaa live demo"
-                src={`https://www.youtube.com/embed/${DEMO_VIDEO_EMBED_ID}?rel=0&modestbranding=1&autoplay=1&mute=1`}
-                className="absolute inset-0 h-full w-full"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                allowFullScreen
-              />
+              <video
+                ref={demoVideoRef}
+                className="absolute inset-0 h-full w-full object-contain"
+                controls
+                playsInline
+                muted
+                preload="metadata"
+                aria-label="Waitaa live demo"
+              >
+                <source src={DEMO_VIDEO_SRC} type="video/mp4" />
+              </video>
             </div>
           </div>
         </div>

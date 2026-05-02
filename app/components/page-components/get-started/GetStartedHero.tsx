@@ -1,3 +1,5 @@
+
+
 import { ArrowRight, Sparkles } from "lucide-react";
 import { Reveal } from "@/app/components/motion/reveal";
 import { Stagger, StaggerItem } from "@/app/components/motion/stagger";

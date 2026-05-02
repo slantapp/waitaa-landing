@@ -3,28 +3,28 @@
     {
       "id": 1,
       "name": "Chioma Okonkwo",
-      "image": "https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?auto=format&fit=crop&w=192&h=192&q=85",
+      "image": "https://images.unsplash.com/photo-1629747387925-6905ff5a558a?auto=format&fit=crop&w=192&h=192&q=85",
       "text": "We rolled out Ringa on every table instead of buzzing gadgets. Guests scan once and the right waiter gets the ping with the table. No more shouting across the dining room. Peak nights feel calmer and turn times improved because requests don’t sit unnoticed.",
       "featured": true
     },
     {
       "id": 2,
       "name": "Emeka Nwosu",
-      "image": "https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=192&h=192&q=85",
+      "image": "https://images.unsplash.com/photo-1522529599102-193c0d76b5b6?auto=format&fit=crop&w=192&h=192&q=85",
       "text": "Menu replaced our laminated QR sheets that were always out of date. Staff update items from the dashboard and orders hit the kitchen in order. We finally have one clear queue instead of WhatsApp screenshots and handwritten tickets.",
       "featured": false
     },
     {
       "id": 3,
       "name": "Adaora Mensah",
-      "image": "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=192&h=192&q=85",
+      "image": "https://images.unsplash.com/photo-1611432579402-7037e3e2c1e4?auto=format&fit=crop&w=192&h=192&q=85",
       "text": "Ringa handles service calls while the optional post-scan placements actually earn during busy hours. We keep messaging tasteful for the brand and still see steady impressions, and the dashboard makes it easy to prove value to ownership.",
       "featured": false
     },
     {
       "id": 4,
       "name": "Tunde Adeyemi",
-      "image": "https://images.unsplash.com/photo-1519345182560-3f2917c472ef?auto=format&fit=crop&w=192&h=192&q=85",
+      "image": "https://images.unsplash.com/photo-1531901599143-df5010ab9438?auto=format&fit=crop&w=192&h=192&q=85",
       "text": "We use Ringa in one service area and Menu in another, so guests see one consistent QR workflow and rotating staff need less training. New hires pick it up in one shift because everything routes through one place instead of three different workflows.",
       "featured": false
     }

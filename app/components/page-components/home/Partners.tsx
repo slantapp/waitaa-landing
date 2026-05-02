@@ -2,11 +2,25 @@
 
 import Image from "next/image";
 import { Reveal } from "@/app/components/motion/reveal";
+import { cn } from "@/app/lib/utils";
 
-const logos = [
-  "/images/logos/cue-bar.png",
-  "/images/logos/farm-city.png",
+type PartnerLogo = {
+  src: string;
+  /** Merged with shared image styles (object-contain, grayscale, etc.) */
+  className?: string;
+};
+
+const logos: PartnerLogo[] = [
+  {
+    src: "/images/logos/cue-bar.png",
+    className: "object-cover max-w-24 w-fit h-auto",
+  },
+  { src: "/images/logos/farm-city.png" },
+  { src: "/images/logos/junkyard.svg" },
 ];
+
+const imageBaseClassName =
+  "object-contain object-center p-0.5 filter grayscale transition-all duration-300 hover:grayscale-0";
 
 const Partners = () => {
   // Duplicate logos for seamless infinite scroll
@@ -25,14 +39,16 @@ const Partners = () => {
         <div className="flex animate-scroll space-x-8 sm:space-x-12 lg:space-x-16">
           {duplicatedLogos.map((logo, index) => (
             <div
-              key={index}
-              className="relative w-24 h-8 sm:w-28 sm:h-10 lg:w-32 lg:h-12 shrink-0"
+              key={`${logo.src}-${index}`}
+              className="relative flex h-12 w-36 shrink-0 items-center justify-center px-2 sm:h-14 sm:w-40 lg:h-16 lg:w-48"
             >
               <Image
-                src={logo}
-                alt={`logo ${(index % logos.length) + 1}`}
+                src={logo.src}
+                alt={`Partner logo ${(index % logos.length) + 1}`}
                 fill
-                className="object-contain filter grayscale hover:grayscale-0 transition-all duration-300 "
+                quality={100}
+                sizes="(min-width: 1024px) 200px, (min-width: 640px) 180px, 152px"
+                className={cn(imageBaseClassName, logo.className)}
               />
             </div>
           ))}
