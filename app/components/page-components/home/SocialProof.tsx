@@ -5,6 +5,7 @@ import Image from "next/image";
 import { useAutoAnimate } from "@formkit/auto-animate/react";
 import Link from "next/link";
 import { Reveal } from "@/app/components/motion/reveal";
+import { SOCIAL_LINKS } from "@/app/lib/socials";
 
 const avatars = [
   "/images/avatars/avatar1.png",
@@ -38,9 +39,14 @@ const SocialProof = () => {
               >
                 Get Started with Waitaa
               </Link>
-              <button className="bg-gray-300 text-secondary px-6 sm:px-7 lg:px-8 py-3 sm:py-3.5 lg:py-4 rounded-full font-medium text-sm sm:text-base hover:bg-gray-400 transition-all duration-200 hover:shadow-xl transform hover:scale-105 cursor-pointer">
+              <a
+                href={SOCIAL_LINKS.instagram}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="bg-gray-300 text-secondary px-6 sm:px-7 lg:px-8 py-3 sm:py-3.5 lg:py-4 rounded-full font-medium text-sm sm:text-base hover:bg-gray-400 transition-all duration-200 hover:shadow-xl transform hover:scale-105 cursor-pointer inline-flex items-center justify-center"
+              >
                 Discover Waitaa
-              </button>
+              </a>
             </div>
           </Reveal>
         </div>

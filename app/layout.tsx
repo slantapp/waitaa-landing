@@ -64,6 +64,8 @@ export const metadata: Metadata = {
     title,
     description,
     images: ["https://s3-bucket.slantapp.io/public-assets/waitaa-bg-meta.jpg"],
+    site: "@waitaa_qr",
+    creator: "@waitaa_qr",
   },
   icons: {
     icon: "/favicon.png",

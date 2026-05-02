@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
-import { Instagram, Linkedin, X } from "lucide-react";
+import { FaInstagram, FaLinkedin } from "react-icons/fa";
+import { FaTiktok, FaXTwitter } from "react-icons/fa6";
 import { Reveal } from "@/app/components/motion/reveal";
+import { SOCIAL_LINKS } from "@/app/lib/socials";
 import { Stagger, StaggerItem } from "@/app/components/motion/stagger";
 import {
   Select,
@@ -102,31 +104,46 @@ export default function ContactUsPage() {
               </StaggerItem>
             </Stagger>
 
-            <Reveal className="mt-10 flex items-center gap-4" variant="fadeUp" delay={0.06}>
+            <Reveal
+              className="mt-10 flex flex-wrap items-center gap-4"
+              variant="fadeUp"
+              delay={0.06}
+            >
               <a
-                href="https://www.linkedin.com/company/waitaa"
-                target="_blank"
-                rel="noreferrer"
-                className="h-12 w-12 rounded-full bg-primary text-secondary flex items-center justify-center hover:bg-primary/90 micro-lift micro-press soft-glow"
-                aria-label="LinkedIn"
-              >
-                <Linkedin className="h-5 w-5" />
-              </a>
-              <a
-                href="#"
-                className="h-12 w-12 rounded-full bg-primary text-secondary flex items-center justify-center hover:bg-primary/90 micro-lift micro-press soft-glow"
-                aria-label="X"
-              >
-                <X className="h-5 w-5" />
-              </a>
-              <a
-                href="https://www.instagram.com/waitaa.qr"
+                href={SOCIAL_LINKS.instagram}
                 target="_blank"
                 rel="noreferrer"
                 className="h-12 w-12 rounded-full bg-primary text-secondary flex items-center justify-center hover:bg-primary/90 micro-lift micro-press soft-glow"
                 aria-label="Instagram"
               >
-                <Instagram className="h-5 w-5" />
+                <FaInstagram className="h-5 w-5" />
+              </a>
+              <a
+                href={SOCIAL_LINKS.tiktok}
+                target="_blank"
+                rel="noreferrer"
+                className="h-12 w-12 rounded-full bg-primary text-secondary flex items-center justify-center hover:bg-primary/90 micro-lift micro-press soft-glow"
+                aria-label="TikTok"
+              >
+                <FaTiktok className="h-5 w-5" />
+              </a>
+              <a
+                href={SOCIAL_LINKS.x}
+                target="_blank"
+                rel="noreferrer"
+                className="h-12 w-12 rounded-full bg-primary text-secondary flex items-center justify-center hover:bg-primary/90 micro-lift micro-press soft-glow"
+                aria-label="X"
+              >
+                <FaXTwitter className="h-5 w-5" />
+              </a>
+              <a
+                href={SOCIAL_LINKS.linkedin}
+                target="_blank"
+                rel="noreferrer"
+                className="h-12 w-12 rounded-full bg-primary text-secondary flex items-center justify-center hover:bg-primary/90 micro-lift micro-press soft-glow"
+                aria-label="LinkedIn"
+              >
+                <FaLinkedin className="h-5 w-5" />
               </a>
             </Reveal>
           </section>

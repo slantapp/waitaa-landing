@@ -1,7 +1,9 @@
 "use client";
 
 import Image from "next/image";
-import { FaInstagram, FaLinkedin, FaTwitter } from "react-icons/fa";
+import { FaInstagram, FaLinkedin } from "react-icons/fa";
+import { FaTiktok, FaXTwitter } from "react-icons/fa6";
+import { SOCIAL_LINKS } from "@/app/lib/socials";
 
 const Footer = () => {
   return (
@@ -47,9 +49,9 @@ const Footer = () => {
             </a>
           </nav>
 
-          <div className="flex justify-center lg:justify-end gap-3 shrink-0">
+          <div className="flex flex-wrap justify-center lg:justify-end gap-3 shrink-0">
             <a
-              href="https://www.instagram.com/waitaa.qr"
+              href={SOCIAL_LINKS.instagram}
               target="_blank"
               rel="noreferrer"
               className="w-12 h-12 bg-white/10 border border-white/10 rounded-full flex items-center justify-center hover:bg-white/15 micro-lift micro-press"
@@ -58,14 +60,25 @@ const Footer = () => {
               <FaInstagram className="w-5 h-5 text-white" />
             </a>
             <a
-              href="#"
+              href={SOCIAL_LINKS.tiktok}
+              target="_blank"
+              rel="noreferrer"
               className="w-12 h-12 bg-white/10 border border-white/10 rounded-full flex items-center justify-center hover:bg-white/15 micro-lift micro-press"
-              aria-label="Twitter"
+              aria-label="TikTok"
             >
-              <FaTwitter className="w-5 h-5 text-white" />
+              <FaTiktok className="w-5 h-5 text-white" />
             </a>
             <a
-              href="https://www.linkedin.com/company/waitaa"
+              href={SOCIAL_LINKS.x}
+              target="_blank"
+              rel="noreferrer"
+              className="w-12 h-12 bg-white/10 border border-white/10 rounded-full flex items-center justify-center hover:bg-white/15 micro-lift micro-press"
+              aria-label="X"
+            >
+              <FaXTwitter className="w-5 h-5 text-white" />
+            </a>
+            <a
+              href={SOCIAL_LINKS.linkedin}
               target="_blank"
               rel="noreferrer"
               className="w-12 h-12 bg-white/10 border border-white/10 rounded-full flex items-center justify-center hover:bg-white/15 micro-lift micro-press"
