@@ -17,6 +17,7 @@ const logos: PartnerLogo[] = [
   },
   { src: "/images/logos/farm-city.png" },
   { src: "/images/logos/junkyard.svg" },
+  { src: "/images/logos/owambe.png" },
 ];
 
 const imageBaseClassName =
@@ -24,7 +25,7 @@ const imageBaseClassName =
 
 const Partners = () => {
   // Duplicate logos for seamless infinite scroll
-  const duplicatedLogos = [...logos, ...logos, ...logos];
+  const duplicatedLogos = [...logos, ...logos, ...logos, ...logos];
 
   return (
     <section className="overflow-hidden ">
